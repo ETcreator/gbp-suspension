@@ -40,7 +40,6 @@ export async function POST(request: Request) {
       const { error } = await supabaseServer
         .from('conversion_events')
         .insert(parseResult.data)
-        .abortSignal(controller.signal as any)
 
       if (error) {
         throw new WizardRunError('Database operation failed', 'DB_ERROR', 500)
