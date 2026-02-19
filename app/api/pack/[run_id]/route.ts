@@ -51,7 +51,7 @@ export async function GET(
         .select('id, spec_version, rules_version, answers, evaluation, evaluation_hash')
         .eq('id', run_id)
         .single()
-        .abortSignal(controller.signal as any) // Type workaround for Supabase
+        
 
       if (error) {
         console.error('Database error:', error)
