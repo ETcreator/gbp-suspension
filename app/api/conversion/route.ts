@@ -6,7 +6,7 @@ import { sanitizeErrorMessage } from '@/lib/utils/sanitize'
 const eventSchema = z.object({
   run_id: z.string().uuid(),
   event_type: z.enum(['preview_viewed', 'unlock_clicked']),
-  meta: z.record(z.unknown()).optional()
+  meta: z.record(z.string(), z.unknown()).optional()
 })
 
 export async function POST(request: Request) {
