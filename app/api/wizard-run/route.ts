@@ -6,10 +6,41 @@ import { createWizardRunError, WizardRunError } from '@/lib/persistence/errors'
 import { evaluate } from '@/lib/evaluator/evaluate'
 import { loadRules } from '@/lib/loader/specLoader'
 import { createStableHash } from '@/lib/utils/hash'
+import type { WizardInput } from '@/lib/types/domain'
 
 // Current versions - in real app these would come from config/env
 const SPEC_VERSION = '1.0.0'
 const RULES_VERSION = '1.0.0'
+
+// Map UI labels to internal codes
+const SUSPENSION_TYPE_MAP = {
+  'Sanfte Sperrung (Profil noch sichtbar)': 'soft',
+  'Harte Sperrung (Nicht mehr sichtbar)': 'hard',
+  'Nicht sicher': 'unknown'
+} as const
+
+const BUSINESS_CATEGORY_MAP = {
+  'Handwerk': 'service',
+  'Gesundheit': 'service',
+  'Handel': 'retail',
+  'Gastronomie': 'restaurant',
+  'Sonstiges': 'other'
+} as const
+
+const WEBSITE_NAP_MAP = {
+  'Ja, alles identisch': 'match',
+  'Nein, es gibt kleine Unterschiede': 'mismatch',
+  'Ich bin mir nicht sicher': 'unknown'
+} as const
+
+function normalizeInput(input: any): WizardInput {
+  return {
+    ...input,
+    suspension_type: SUSPENSION_TYPE_MAP[input.suspension_type as keyof typeof SUSPENSION_TYPE_MAP],
+    business_category: BUSINESS_CATEGORY_MAP[input.business_category as keyof typeof BUSINESS_CATEGORY_MAP],
+    website_nap_match: WEBSITE_NAP_MAP[input.website_nap_match as keyof typeof WEBSITE_NAP_MAP]
+  }
+}
 
 export async function POST(request: Request) {
   try {
@@ -45,9 +76,12 @@ export async function POST(request: Request) {
       )
     }
 
+    // Normalize input before evaluation
+    const normalizedInput = normalizeInput(parseResult.data)
+
     // Load rules and evaluate
     const rules = await loadRules()
-    const evaluation = evaluate(parseResult.data, rules)
+    const evaluation = evaluate(normalizedInput, rules)
     
     // Create stable hash of evaluation
     const evaluation_hash = createStableHash(evaluation)
@@ -56,7 +90,7 @@ export async function POST(request: Request) {
     const { id } = await saveWizardRun({
       spec_version: SPEC_VERSION,
       rules_version: RULES_VERSION,
-      answers: parseResult.data,
+      answers: normalizedInput, // Save normalized answers
       evaluation,
       evaluation_hash
     })
