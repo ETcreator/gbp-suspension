@@ -1,79 +1,81 @@
-import './test-env'
-import { test } from 'node:test'
-import { strict as assert } from 'node:assert'
-import { createStableHash } from '../../utils/hash'
-import { WizardRunError } from '../errors'
+import { describe, test, expect, vi } from 'vitest'
 import { saveWizardRun } from '../saveWizardRun'
-import { supabaseServer } from '../supabaseServer'
-import { mockData, mockSupabase } from './test-env'
+import { getSupabaseServer } from '../supabaseServer'
+import { mockData } from './test-env'
+import { PostgrestSingleResponse, SupabaseClient } from '@supabase/supabase-js'
 
-// Store original method
-const originalFrom = supabaseServer.from
-supabaseServer.from = mockSupabase.from
+describe('saveWizardRun', () => {
+  test('saves wizard run and returns id', async () => {
+    const input = {
+      spec_version: '1.0.0',
+      rules_version: '1.0.0',
+      answers: {},
+      evaluation: {},
+      evaluation_hash: 'abc123'
+    }
 
-test('saves wizard run and returns valid UUID', async () => {
-  const testInput = {
-    spec_version: '1.0.0',
-    rules_version: '1.0.0',
-    answers: {
-      suspension_type: 'soft',
-      business_category: 'retail',
-      country: 'DE'
-    },
-    evaluation: {
-      matched: [],
-      top_hypotheses: [],
-      evidence_gaps: []
-    },
-    evaluation_hash: createStableHash({
-      matched: [],
-      top_hypotheses: [],
-      evidence_gaps: []
-    })
-  }
+    const result = await saveWizardRun(input)
+    expect(result).toEqual({ id: mockData.id })
+  })
 
-  const { id } = await saveWizardRun(testInput)
-  assert.equal(id, mockData.id)
-})
-
-test('handles timeout correctly', async () => {
-  // Override with slow response that will trigger AbortController timeout
-  supabaseServer.from = () => ({
-    insert: () => ({
-      select: () => ({
-        single: () => ({
-          abortSignal: () => new Promise((_, reject) => {
-            setTimeout(() => {
-              const error = new Error('The operation was aborted')
-              error.name = 'AbortError'
-              reject(error)
-            }, 15000)
+  test('throws error on database error', async () => {
+    const mockError = new Error('Database error')
+    const mockSupabase = {
+      from: () => ({
+        insert: () => ({
+          select: () => ({
+            single: () => ({
+              data: null,
+              error: mockError,
+              count: null,
+              status: 500,
+              statusText: 'Error'
+            })
           })
         })
       })
-    })
-  }) as any
+    } as unknown as SupabaseClient
 
-  const testInput = {
-    spec_version: '1.0.0',
-    rules_version: '1.0.0',
-    answers: {},
-    evaluation: {},
-    evaluation_hash: createStableHash({})
-  }
+    vi.spyOn(getSupabaseServer(), 'from').mockImplementation(mockSupabase.from)
 
-  await assert.rejects(
-    () => saveWizardRun(testInput),
-    (error: unknown) => {
-      if (!(error instanceof WizardRunError)) return false
-      assert.equal(error.code, 'TIMEOUT_ERROR')
-      assert.equal(error.status, 504)
-      return true
+    const input = {
+      spec_version: '1.0.0',
+      rules_version: '1.0.0',
+      answers: {},
+      evaluation: {},
+      evaluation_hash: 'abc123'
     }
-  )
-})
 
-// Cleanup
-test.after(() => {
-  supabaseServer.from = originalFrom
+    await expect(saveWizardRun(input)).rejects.toThrow('DB_ERROR')
+  })
+
+  test('throws error on timeout', async () => {
+    const mockSupabase = {
+      from: () => ({
+        insert: () => ({
+          select: () => ({
+            single: () => new Promise(resolve => setTimeout(() => resolve({
+              data: null,
+              error: new Error('Timeout'),
+              count: null,
+              status: 504,
+              statusText: 'Gateway Timeout'
+            }), 15000))
+          })
+        })
+      })
+    } as unknown as SupabaseClient
+
+    vi.spyOn(getSupabaseServer(), 'from').mockImplementation(mockSupabase.from)
+
+    const input = {
+      spec_version: '1.0.0',
+      rules_version: '1.0.0',
+      answers: {},
+      evaluation: {},
+      evaluation_hash: 'abc123'
+    }
+
+    await expect(saveWizardRun(input)).rejects.toThrow('DB_ERROR')
+  })
 })

@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { z } from 'zod'
 import { wizardInputSchema } from '@/lib/validation/wizardSchema'
-import { supabaseServer } from '@/lib/persistence/supabaseServer'
+import { getSupabaseServer } from '@/lib/persistence/supabaseServer'
 import { generatePack } from '@/lib/packs/generatePack'
 import { sanitizeErrorMessage } from '@/lib/utils/sanitize'
 import { WizardRunError } from '@/lib/persistence/errors'
@@ -46,7 +46,7 @@ export async function GET(
 
     try {
       // Fetch wizard run from database
-      const { data, error } = await supabaseServer
+      const { data, error } = await getSupabaseServer()
         .from('wizard_runs')
         .select('id, spec_version, rules_version, answers, evaluation, evaluation_hash')
         .eq('id', run_id)

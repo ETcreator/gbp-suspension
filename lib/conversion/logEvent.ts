@@ -1,4 +1,4 @@
-import { supabaseServer } from '../persistence/supabaseServer'
+import { getSupabaseServer } from '../persistence/supabaseServer'
 
 type ConversionEvent = {
   run_id: string
@@ -16,7 +16,9 @@ export async function logConversionEvent({
   meta?: ConversionEvent['meta']
 }): Promise<void> {
   try {
-    const { error } = await supabaseServer
+    const supabase = getSupabaseServer()
+    
+    const { error } = await supabase
       .from('conversion_events')
       .insert({
         run_id: runId,

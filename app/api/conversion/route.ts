@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 import { z } from 'zod'
-import { supabaseServer } from '@/lib/persistence/supabaseServer'
+import { getSupabaseServer } from '@/lib/persistence/supabaseServer'
 import { sanitizeErrorMessage } from '@/lib/utils/sanitize'
 
 const eventSchema = z.object({
@@ -33,7 +33,7 @@ export async function POST(request: Request) {
       )
     }
 
-    const { error } = await supabaseServer
+    const { error } = await getSupabaseServer()
       .from('conversion_events')
       .insert(parseResult.data)
 

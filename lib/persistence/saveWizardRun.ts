@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { supabaseServer } from './supabaseServer'
+import { getSupabaseServer } from './supabaseServer'
 import { createWizardRunError } from './errors'
 
 const responseSchema = z.object({
@@ -19,7 +19,7 @@ export async function saveWizardRun(input: SaveWizardRunInput): Promise<{ id: st
   const timeout = setTimeout(() => controller.abort(), 10000)
 
   try {
-    const { data, error } = await supabaseServer
+    const { data, error } = await getSupabaseServer()
       .from('wizard_runs')
       .insert({
         spec_version: input.spec_version,
