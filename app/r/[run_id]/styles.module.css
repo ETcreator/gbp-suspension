@@ -1,0 +1,63 @@
+.main {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.h1 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.h2 {
+  font-size: 1.25rem;
+  margin: 2rem 0 1rem;
+}
+
+.h3 {
+  font-size: 1rem;
+  margin: 1rem 0;
+}
+
+.list {
+  margin: 1rem 0;
+}
+
+.listItem {
+  margin: 0.5rem 0;
+}
+
+.preWrap {
+  white-space: pre-wrap;
+}
+
+.section {
+  margin: 2rem 0;
+}
+
+.alert {
+  padding: 1rem;
+  color: #991b1b;
+}
+
+.previewNotice {
+  padding: 1rem;
+  background: #f0f9ff;
+  color: #0c4a6e;
+  margin-bottom: 2rem;
+}
+
+.footer {
+  margin: 2rem 0;
+  padding-top: 1rem;
+  border-top: 1px solid #ccc;
+}
+
+.unlockButton {
+  display: block;
+  padding: 1rem;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+}
