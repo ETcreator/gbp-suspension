@@ -30,8 +30,7 @@ export async function saveWizardRun(input: SaveWizardRunInput): Promise<{ id: st
       })
       .select('id')
       .single()
-      .abortSignal(controller.signal as any) // Type workaround for Supabase
-
+      
     if (error) {
       console.error('Database error:', error)
       throw createWizardRunError('DB_ERROR')
