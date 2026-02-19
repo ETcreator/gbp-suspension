@@ -1,0 +1,238 @@
+{
+  "test_cases": [
+    {
+      "case_id": "CASE_001_VIRTUAL_OFFICE",
+      "input": {
+        "suspension_type": "soft",
+        "business_category": "service",
+        "country": "DE",
+        "recent_profile_changes": false,
+        "uses_virtual_office": true,
+        "business_name_contains_keywords": false,
+        "multiple_listings_exist": false,
+        "website_nap_match": "match",
+        "has_business_registration": true,
+        "has_storefront_signage": false,
+        "has_interior_photos": false,
+        "has_utility_bill": true
+      },
+      "expected_top_hypotheses": ["H1_VIRTUAL_OFFICE"]
+    },
+    {
+      "case_id": "CASE_002_HARD_SUSPENSION",
+      "input": {
+        "suspension_type": "hard",
+        "business_category": "retail",
+        "country": "AT",
+        "recent_profile_changes": false,
+        "uses_virtual_office": false,
+        "business_name_contains_keywords": false,
+        "multiple_listings_exist": false,
+        "website_nap_match": "match",
+        "has_business_registration": true,
+        "has_storefront_signage": true,
+        "has_interior_photos": true,
+        "has_utility_bill": true
+      },
+      "expected_top_hypotheses": ["H5_HARD_SUSPENSION"]
+    },
+    {
+      "case_id": "CASE_003_INSUFFICIENT_EVIDENCE",
+      "input": {
+        "suspension_type": "unknown",
+        "business_category": "service",
+        "country": "CH",
+        "recent_profile_changes": false,
+        "uses_virtual_office": false,
+        "business_name_contains_keywords": false,
+        "multiple_listings_exist": false,
+        "website_nap_match": "match",
+        "has_business_registration": false,
+        "has_storefront_signage": false,
+        "has_interior_photos": false,
+        "has_utility_bill": false
+      },
+      "expected_top_hypotheses": ["H6_INSUFFICIENT_EVIDENCE"]
+    },
+    {
+      "case_id": "CASE_004_MULTIPLE_LISTINGS",
+      "input": {
+        "suspension_type": "soft",
+        "business_category": "restaurant",
+        "country": "DE",
+        "recent_profile_changes": true,
+        "uses_virtual_office": false,
+        "business_name_contains_keywords": false,
+        "multiple_listings_exist": true,
+        "website_nap_match": "match",
+        "has_business_registration": true,
+        "has_storefront_signage": true,
+        "has_interior_photos": true,
+        "has_utility_bill": true
+      },
+      "expected_top_hypotheses": ["H3_MULTIPLE_LISTINGS"]
+    },
+    {
+      "case_id": "CASE_005_WEBSITE_MISMATCH",
+      "input": {
+        "suspension_type": "unknown",
+        "business_category": "service",
+        "country": "AT",
+        "recent_profile_changes": false,
+        "uses_virtual_office": false,
+        "business_name_contains_keywords": false,
+        "multiple_listings_exist": false,
+        "website_nap_match": "mismatch",
+        "has_business_registration": true,
+        "has_storefront_signage": true,
+        "has_interior_photos": true,
+        "has_utility_bill": true
+      },
+      "expected_top_hypotheses": ["H2_WEBSITE_MISMATCH"]
+    },
+    {
+      "case_id": "CASE_006_SUSPICIOUS_KEYWORDS",
+      "input": {
+        "suspension_type": "soft",
+        "business_category": "other",
+        "country": "DE",
+        "recent_profile_changes": false,
+        "uses_virtual_office": false,
+        "business_name_contains_keywords": true,
+        "multiple_listings_exist": false,
+        "website_nap_match": "match",
+        "has_business_registration": true,
+        "has_storefront_signage": true,
+        "has_interior_photos": true,
+        "has_utility_bill": true
+      },
+      "expected_top_hypotheses": ["H4_SUSPICIOUS_KEYWORDS"]
+    },
+    {
+      "case_id": "CASE_007_VIRTUAL_AND_KEYWORDS",
+      "input": {
+        "suspension_type": "soft",
+        "business_category": "service",
+        "country": "DE",
+        "recent_profile_changes": false,
+        "uses_virtual_office": true,
+        "business_name_contains_keywords": true,
+        "multiple_listings_exist": false,
+        "website_nap_match": "unknown",
+        "has_business_registration": true,
+        "has_storefront_signage": false,
+        "has_interior_photos": false,
+        "has_utility_bill": true
+      },
+      "expected_top_hypotheses": ["H1_VIRTUAL_OFFICE", "H4_SUSPICIOUS_KEYWORDS"]
+    },
+    {
+      "case_id": "CASE_008_HARD_AND_EVIDENCE",
+      "input": {
+        "suspension_type": "hard",
+        "business_category": "retail",
+        "country": "CH",
+        "recent_profile_changes": false,
+        "uses_virtual_office": false,
+        "business_name_contains_keywords": false,
+        "multiple_listings_exist": false,
+        "website_nap_match": "match",
+        "has_business_registration": false,
+        "has_storefront_signage": false,
+        "has_interior_photos": false,
+        "has_utility_bill": false
+      },
+      "expected_top_hypotheses": ["H6_INSUFFICIENT_EVIDENCE", "H5_HARD_SUSPENSION"]
+    },
+    {
+      "case_id": "CASE_009_MULTIPLE_AND_MISMATCH",
+      "input": {
+        "suspension_type": "unknown",
+        "business_category": "service",
+        "country": "DE",
+        "recent_profile_changes": true,
+        "uses_virtual_office": false,
+        "business_name_contains_keywords": false,
+        "multiple_listings_exist": true,
+        "website_nap_match": "mismatch",
+        "has_business_registration": true,
+        "has_storefront_signage": true,
+        "has_interior_photos": true,
+        "has_utility_bill": false
+      },
+      "expected_top_hypotheses": ["H3_MULTIPLE_LISTINGS", "H2_WEBSITE_MISMATCH"]
+    },
+    {
+      "case_id": "CASE_010_CLEAN",
+      "input": {
+        "suspension_type": "unknown",
+        "business_category": "retail",
+        "country": "DE",
+        "recent_profile_changes": false,
+        "uses_virtual_office": false,
+        "business_name_contains_keywords": false,
+        "multiple_listings_exist": false,
+        "website_nap_match": "match",
+        "has_business_registration": true,
+        "has_storefront_signage": true,
+        "has_interior_photos": true,
+        "has_utility_bill": true
+      },
+      "expected_top_hypotheses": []
+    },
+    {
+      "case_id": "CASE_011_NEQ_COUNTRY",
+      "input": {
+        "suspension_type": "unknown",
+        "business_category": "retail",
+        "country": "AT",
+        "recent_profile_changes": false,
+        "uses_virtual_office": false,
+        "business_name_contains_keywords": false,
+        "multiple_listings_exist": false,
+        "website_nap_match": "match",
+        "has_business_registration": true,
+        "has_storefront_signage": true,
+        "has_interior_photos": true,
+        "has_utility_bill": true
+      },
+      "expected_top_hypotheses": ["H8_COUNTRY_IN_DACH", "H7_COUNTRY_NOT_DE"]
+    },
+    {
+      "case_id": "CASE_012_IN_COUNTRY",
+      "input": {
+        "suspension_type": "unknown",
+        "business_category": "retail",
+        "country": "DE",
+        "recent_profile_changes": false,
+        "uses_virtual_office": false,
+        "business_name_contains_keywords": false,
+        "multiple_listings_exist": false,
+        "website_nap_match": "match",
+        "has_business_registration": true,
+        "has_storefront_signage": true,
+        "has_interior_photos": true,
+        "has_utility_bill": true
+      },
+      "expected_top_hypotheses": ["H8_COUNTRY_IN_DACH"]
+    },
+    {
+      "case_id": "CASE_013_CONTAINS_CATEGORY",
+      "input": {
+        "suspension_type": "unknown",
+        "business_category": "service",
+        "country": "DE",
+        "recent_profile_changes": false,
+        "uses_virtual_office": false,
+        "business_name_contains_keywords": false,
+        "multiple_listings_exist": false,
+        "website_nap_match": "match",
+        "has_business_registration": true,
+        "has_storefront_signage": true,
+        "has_interior_photos": true,
+        "has_utility_bill": true
+      },
+      "expected_top_hypotheses": ["H9_CATEGORY_CONTAINS", "H8_COUNTRY_IN_DACH"]
+    }
+  ]
+}

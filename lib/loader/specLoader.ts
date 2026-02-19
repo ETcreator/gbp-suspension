@@ -2,7 +2,8 @@ import { promises as fs } from 'fs'
 import path from 'path'
 import type { HypothesisRule } from '../types/domain'
 
-const SPEC_DIR = path.resolve(process.cwd(), '..', 'spec')
+// Update path to use app-web/spec instead of ../spec
+const SPEC_DIR = path.join(process.cwd(), 'spec')
 
 export async function loadWizardQuestions(): Promise<unknown> {
   const content = await fs.readFile(

@@ -1,0 +1,85 @@
+{
+  "A_context": [
+    {
+      "field_id": "suspension_type",
+      "type": "select",
+      "required": true,
+      "label_de": "Art der Suspendierung",
+      "options": ["Sanfte Sperrung (Profil noch sichtbar)", "Harte Sperrung (Nicht mehr sichtbar)", "Nicht sicher"]
+    },
+    {
+      "field_id": "business_category",
+      "type": "select",
+      "required": true,
+      "label_de": "Geschäftskategorie",
+      "options": ["Handwerk", "Gesundheit", "Handel", "Gastronomie", "Sonstiges"]
+    },
+    {
+      "field_id": "country",
+      "type": "select",
+      "required": true,
+      "label_de": "Land",
+      "options": ["DE", "AT", "CH"]
+    },
+    {
+      "field_id": "recent_profile_changes",
+      "type": "boolean",
+      "required": true,
+      "label_de": "Kürzliche Profiländerungen"
+    }
+  ],
+  "B_risk_triggers": [
+    {
+      "field_id": "uses_virtual_office",
+      "type": "boolean",
+      "required": true,
+      "label_de": "Nutzten Sie ein virtuelles Büro?"
+    },
+    {
+      "field_id": "business_name_contains_keywords",
+      "type": "boolean",
+      "required": true,
+      "label_de": "Enthält der Firmenname zusätzliche Suchbegriffe (z.B. Stadtname)?"
+    },
+    {
+      "field_id": "multiple_listings_exist",
+      "type": "boolean",
+      "required": true,
+      "label_de": "Gibt es bei Google Maps noch andere (alte oder doppelte) Einträge für Ihr Unternehmen?"
+    },
+    {
+      "field_id": "website_nap_match",
+      "type": "select",
+      "required": true,
+      "label_de": "Stimmen Name, Adresse und Telefonnummer auf Ihrer Website exakt mit Ihrem Google-Profil überein?",
+      "options": ["Ja, alles identisch", "Nein, es gibt kleine Unterschiede", "Ich bin mir nicht sicher"]
+    }
+  ],
+  "C_evidence": [
+    {
+      "field_id": "has_business_registration",
+      "type": "boolean",
+      "required": true,
+      "label_de": "Gewerbeanmeldung vorhanden"
+    },
+    {
+      "field_id": "has_storefront_signage",
+      "type": "boolean",
+      "required": true,
+      "label_de": "Permanente Geschäftsbeschilderung am Standort vorhanden"
+    },
+    {
+      "field_id": "has_interior_photos",
+      "type": "boolean",
+      "required": true,
+      "label_de": "Fotos der Innenräume vorhanden"
+    },
+    {
+      "field_id": "has_utility_bill",
+      "type": "boolean",
+      "required": true,
+      "label_de": "Versorgungsrechnung (Strom oder Gas) auf den Firmennamen vorhanden"
+    }
+  ],
+  "D_preview_checkout": []
+}

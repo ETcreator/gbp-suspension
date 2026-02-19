@@ -1,0 +1,153 @@
+{
+  "hypotheses": [
+    {
+      "hypothesis_id": "H1_VIRTUAL_OFFICE",
+      "description_de": "Verdacht auf virtuelles Büro ohne physische Präsenz",
+      "conditions": [
+        {
+          "field": "uses_virtual_office",
+          "operator": "eq",
+          "value": true
+        }
+      ],
+      "confidence_score": 70,
+      "evidence_gaps": [
+        "has_storefront_signage",
+        "has_interior_photos"
+      ],
+      "priority": 1
+    },
+    {
+      "hypothesis_id": "H5_HARD_SUSPENSION",
+      "description_de": "Kriterien für harte Suspendierung erfüllt",
+      "conditions": [
+        {
+          "field": "suspension_type",
+          "operator": "eq",
+          "value": "hard"
+        }
+      ],
+      "confidence_score": 70,
+      "evidence_gaps": [
+        "has_business_registration",
+        "has_interior_photos"
+      ],
+      "priority": 2
+    },
+    {
+      "hypothesis_id": "H6_INSUFFICIENT_EVIDENCE",
+      "description_de": "Unzureichende Nachweise für Geschäftsexistenz",
+      "conditions": [
+        {
+          "field": "has_business_registration",
+          "operator": "eq",
+          "value": false
+        },
+        {
+          "field": "has_storefront_signage",
+          "operator": "eq",
+          "value": false
+        }
+      ],
+      "confidence_score": 80,
+      "evidence_gaps": [
+        "has_interior_photos",
+        "has_utility_bill"
+      ],
+      "priority": 3
+    },
+    {
+      "hypothesis_id": "H3_MULTIPLE_LISTINGS",
+      "description_de": "Mehrere widersprüchliche Einträge gefunden",
+      "conditions": [
+        {
+          "field": "multiple_listings_exist",
+          "operator": "eq",
+          "value": true
+        }
+      ],
+      "confidence_score": 75,
+      "evidence_gaps": [
+        "has_business_registration"
+      ],
+      "priority": 4
+    },
+    {
+      "hypothesis_id": "H2_WEBSITE_MISMATCH",
+      "description_de": "NAP-Daten stimmen nicht mit Website überein",
+      "conditions": [
+        {
+          "field": "website_nap_match",
+          "operator": "eq",
+          "value": "mismatch"
+        }
+      ],
+      "confidence_score": 60,
+      "evidence_gaps": [
+        "has_business_registration",
+        "has_utility_bill"
+      ],
+      "priority": 5
+    },
+    {
+      "hypothesis_id": "H4_SUSPICIOUS_KEYWORDS",
+      "description_de": "Geschäftsname enthält verdächtige Schlüsselwörter",
+      "conditions": [
+        {
+          "field": "business_name_contains_keywords",
+          "operator": "eq",
+          "value": true
+        }
+      ],
+      "confidence_score": 60,
+      "evidence_gaps": [
+        "has_business_registration",
+        "has_storefront_signage",
+        "has_utility_bill"
+      ],
+      "priority": 6
+    },
+    {
+      "hypothesis_id": "H7_COUNTRY_NOT_DE",
+      "description_de": "Geschäft nicht in Deutschland ansässig",
+      "conditions": [
+        {
+          "field": "country",
+          "operator": "neq",
+          "value": "DE"
+        }
+      ],
+      "confidence_score": 50,
+      "evidence_gaps": [],
+      "priority": 7
+    },
+    {
+      "hypothesis_id": "H8_COUNTRY_IN_DACH",
+      "description_de": "Geschäft im DACH-Raum ansässig",
+      "conditions": [
+        {
+          "field": "country",
+          "operator": "in",
+          "value": ["DE", "AT", "CH"]
+        }
+      ],
+      "confidence_score": 55,
+      "evidence_gaps": [],
+      "priority": 8
+    },
+    {
+      "hypothesis_id": "H9_CATEGORY_CONTAINS",
+      "description_de": "Dienstleistungskategorie",
+      "conditions": [
+        {
+          "field": "business_category",
+          "operator": "contains",
+          "value": "serv"
+        }
+      ],
+      "confidence_score": 65,
+      "evidence_gaps": [],
+      "priority": 9
+    }
+  ]
+}
