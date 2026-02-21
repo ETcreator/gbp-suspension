@@ -28,7 +28,7 @@ export default function HomePage() {
               </span>
             </h1>
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto mt-8 leading-relaxed">
-              Analyse dauert ca. 3 Minuten + individueller Einspruchsplan für Ihr Unternehmensprofil.
+              Analyse dauert ca. 5 Minuten + individueller Einspruchsplan für Ihr Unternehmensprofil.
             </p>
             <p className="text-sm text-slate-500 dark:text-slate-400 mt-4">
               Basierend auf aktuellen Google Business Richtlinien · Kein Zugriff auf Ihr Google Konto erforderlich
