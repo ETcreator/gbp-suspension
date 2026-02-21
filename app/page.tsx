@@ -24,7 +24,7 @@ export default function HomePage() {
                 Google Profil gesperrt?
               </span>
               <span className="block text-4xl md:text-4xl font-semibold text-blue-700 dark:text-blue-500 mt-2">
-                In 5 Minuten kennen Sie den wahrscheinlichen Sperrgrund – und welche Dokumente Google jetzt verlangt.
+                Erhalten Sie in wenigen Minuten Ihren konkreten Entsperrplan – inklusive der Dokumente, die für Ihren Einspruch entscheidend sind.
               </span>
             </h1>
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto mt-8 leading-relaxed">
