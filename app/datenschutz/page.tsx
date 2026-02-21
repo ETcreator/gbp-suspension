@@ -7,10 +7,10 @@ export default function DatenschutzPage() {
         <div className="prose dark:prose-invert max-w-none">
           <h2>1. Verantwortlicher</h2>
           <p>
-            [Dipl-Ing. Thorsten Esch]<br />
-            [Puchheimer Weg 16]<br />
-            [82223] [Eichenau]<br />
-            E-Mail: [thorsten.esch@googlemail.com]
+            Dipl-Ing. Thorsten Esch<br />
+            Puchheimer Weg 16<br />
+            82223 Eichenau<br />
+            E-Mail: thorsten.esch@googlemail.com
           </p>
 
           <h2>2. Hosting und Infrastruktur</h2>
@@ -67,7 +67,7 @@ export default function DatenschutzPage() {
           </p>
 
           <p className="text-sm text-slate-500 dark:text-slate-400 mt-8">
-            Stand: Februar 2024
+            Stand: Februar 2026
           </p>
         </div>
       </div>

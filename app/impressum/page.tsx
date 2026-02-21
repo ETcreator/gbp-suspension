@@ -7,15 +7,15 @@ export default function ImpressumPage() {
         <div className="prose dark:prose-invert max-w-none">
           <h2>Angaben gemäß § 5 TMG</h2>
           <p>
-            [Dipl.-Ing. Thorsten Esch]<br />
-            [Puchheimer Weg 16]<br />
-            [82223] [Eichenau]
+            Dipl.-Ing. Thorsten Esch<br />
+            Puchheimer Weg 16<br />
+            82223 Eichenau
           </p>
 
           <h2>Kontakt</h2>
           <p>
-            E-Mail: [thorsten.esch@googlemail.com]<br />
-            USt-IdNr.: [nicht erforderlich]
+            E-Mail: thorsten.esch@googlemail.com<br />
+            USt-IdNr.: nicht erforderlich
           </p>
 
           <h2>Disclaimer</h2>

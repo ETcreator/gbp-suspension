@@ -34,7 +34,7 @@ export default function AGBPage() {
           </p>
 
           <p className="text-sm text-slate-500 dark:text-slate-400 mt-8">
-            Stand: Februar 2024
+            Stand: Februar 2026
           </p>
         </div>
       </div>
