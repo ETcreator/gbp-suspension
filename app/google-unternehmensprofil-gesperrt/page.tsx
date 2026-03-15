@@ -30,7 +30,7 @@ export default function GoogleUnternehmensprofilGesperrtPage() {
       <h1>Google Unternehmensprofil gesperrt – was jetzt?</h1>
 
       <p className="lead text-xl text-slate-600 dark:text-slate-400">
-        Eine Sperrung des Google Unternehmensprofils kann massive Auswirkungen auf lokale Unternehmen haben: Sichtbarkeitsverlust in der Google-Suche, fehlende Kartenanzeige und damit einbrechende Kundenanfragen. In diesem Artikel erfahren Sie, warum Profile gesperrt werden und welche konkreten Schritte zur Reaktivierung führen.
+        Eine Sperrung des Google Unternehmensprofils kann massive Auswirkungen auf lokale Unternehmen haben: Sichtbarkeitsverlust in der Google-Suche, fehlende Kartenanzeige und damit einbrechende Kundenanfragen. In diesem Artikel erfahren Sie, warum Profile gesperrt werden und wie Sie die Ursache Ihrer Sperrung systematisch ermitteln können.
       </p>
 
       <TableOfContents items={[
@@ -137,26 +137,29 @@ export default function GoogleUnternehmensprofilGesperrtPage() {
       <h2>Welche Unterlagen Google häufig erwartet</h2>
 
       <p>
-        Um eine Sperrung aufzuheben, müssen Sie Google überzeugen, dass Ihr Unternehmen legitim ist und die Richtlinien einhält. Folgende Dokumente und Nachweise werden regelmäßig angefordert:
+        Um eine Sperrung aufzuheben, müssen Sie Google überzeugen, dass Ihr Unternehmen legitim ist und die Richtlinien einhält. Welche Dokumente und Nachweise Google konkret erwartet, hängt stark von der Art der Sperrung, Ihrem Geschäftsmodell und dem vermuteten Verstoß ab.
       </p>
 
-      <h3>Pflichtdokumente</h3>
-      <CheckList variant="check" items={[
-        'Gewerbeanmeldung oder Handelsregisterauszug: Offizieller Nachweis Ihrer Geschäftstätigkeit vom zuständigen Gewerbeamt oder Handelsregister',
-        'Versorgungsrechnung: Strom-, Gas- oder Wasserrechnung auf den Firmennamen, nicht älter als 3 Monate',
-        'Geschäftsbeschilderung: Fotos Ihrer permanenten Außenbeschilderung, die den Firmennamen gut lesbar zeigt',
-        'Innenraumfotos: Professionelle Aufnahmen Ihrer Geschäftsräume (Empfangsbereich, Arbeitsplätze, Produkte/Dienstleistungen)'
-      ]} />
+      <ContentCard title="Typische Nachweiskategorien" variant="secondary">
+        <p>Google fordert üblicherweise Nachweise in folgenden Bereichen an:</p>
+        <CheckList variant="arrow" items={[
+          'Geschäftliche Legitimation (z.B. Gewerbeanmeldung, Handelsregisterauszug)',
+          'Adressnachweis (z.B. Versorgungsrechnungen, Mietverträge)',
+          'Physische Präsenz (z.B. Fotos der Geschäftsbeschilderung, Innenraumaufnahmen)',
+          'Branchenspezifische Qualifikationen (bei regulierten Branchen)'
+        ]} />
+      </ContentCard>
 
-      <h3>Zusätzliche hilfreiche Nachweise</h3>
-      <CheckList variant="arrow" items={[
-        'Mietvertrag oder Eigentumsnachweis für die Geschäftsadresse',
-        'Geschäftskonto-Auszüge, die Geschäftsaktivitäten belegen',
-        'Zertifikate, Lizenzen oder Qualifikationsnachweise (bei regulierten Branchen)',
-        'Kundenbelege oder Rechnungen, die Geschäftstätigkeit dokumentieren',
-        'Fotos von Firmenwagen mit Beschriftung',
-        'Visitenkarten, Briefpapier, anderes Geschäftsmaterial'
-      ]} />
+      <ImportantNote>
+        <p>
+          Die exakte Zusammenstellung der benötigten Dokumente variiert erheblich je nach Sperrungsgrund. Ein virtuelles Büro erfordert andere Nachweise als ein Ladengeschäft, eine sanfte Sperrung andere als eine harte Sperrung. Eine pauschale Checkliste kann in vielen Fällen unvollständig oder überdimensioniert sein.
+        </p>
+      </ImportantNote>
+
+      <CTASection 
+        text="Dokumenten-Checkliste für Ihren Fall erstellen"
+        subtitle="Ermitteln Sie in 5 Minuten, welche Nachweise in Ihrer spezifischen Situation relevant sind"
+      />
 
       <h2>Was Sie jetzt konkret tun sollten</h2>
 

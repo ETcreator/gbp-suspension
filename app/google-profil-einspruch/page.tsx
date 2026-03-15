@@ -85,72 +85,38 @@ export default function GoogleProfilEinspruchPage() {
       <h2>Welche Dokumente typischerweise nötig sind</h2>
 
       <p>
-        Die Qualität und Vollständigkeit Ihrer Dokumentation entscheidet maßgeblich über den Erfolg des Einspruchs. Google prüft, ob Ihr Unternehmen real und legitimiert ist. Bereiten Sie folgende Unterlagen vor:
+        Die Qualität und Vollständigkeit Ihrer Dokumentation entscheidet maßgeblich über den Erfolg des Einspruchs. Welche Dokumente Google konkret fordert, variiert jedoch erheblich je nach Art der Sperrung, Ihrem Geschäftsmodell und dem vermuteten Richtlinienverstoß.
       </p>
 
-      <h3>Kerndokumente (sollten immer dabei sein)</h3>
-
-      <ContentCard title="1. Gewerbeanmeldung oder Handelsregisterauszug">
-        <CheckList variant="check" items={[
-          'Offizieller Nachweis vom Gewerbeamt oder Handelsregister',
-          'Muss aktuelle Geschäftsadresse enthalten',
-          'Nicht älter als 6 Monate',
-          'Als lesbare PDF-Datei (Scan in guter Qualität)'
-        ]} />
-      </ContentCard>
-
-      <ContentCard title="2. Versorgungsrechnung auf Firmennamen">
-        <CheckList variant="check" items={[
-          'Strom-, Gas-, Wasser- oder Festnetz-Telefonrechnung',
-          'Ausgestellt auf den offiziellen Firmennamen',
-          'Nicht älter als 3 Monate',
-          'Geschäftsadresse muss sichtbar sein'
-        ]} />
-      </ContentCard>
-
-      <ContentCard title="3. Fotos der Geschäftsbeschilderung">
-        <CheckList variant="check" items={[
-          'Permanente Außenbeschilderung mit Firmennamen',
-          'Mindestens 2 Aufnahmen aus verschiedenen Perspektiven',
-          'Gebäude und Schild müssen erkennbar sein',
-          'Hohe Auflösung, gute Beleuchtung'
-        ]} />
-      </ContentCard>
-
-      <ContentCard title="4. Innenraum-Fotos der Geschäftsräume">
-        <CheckList variant="check" items={[
-          'Mindestens 5-8 professionelle Fotos',
-          'Empfangsbereich, Arbeitsplätze, Produkte/Ausstattung',
-          'Müssen geschäftliche Nutzung belegen',
-          'Keine privaten Wohnräume'
-        ]} />
-      </ContentCard>
-
-      <h3>Zusätzliche Nachweise (je nach Situation)</h3>
-
-      <HighlightBox variant="info">
-        <h4><strong>Bei virtuellen Büros oder Coworking Spaces:</strong></h4>
+      <ContentCard title="Dokumentenkategorien im Überblick" variant="secondary">
+        <p>Google prüft typischerweise Nachweise in folgenden Bereichen:</p>
         <CheckList variant="arrow" items={[
-          'Mietvertrag für festen Arbeitsplatz (nicht nur Postadresse)',
-          'Nachweis über regelmäßige Anwesenheit',
-          'Foto Ihres beschrifteten Arbeitsplatzes',
-          'Bestätigung des Vermieters über Geschäftstätigkeit'
+          'Geschäftliche Legitimation: Offizielle Registrierungen und Genehmigungen',
+          'Adressnachweis: Belege für die physische Geschäftsadresse',
+          'Geschäftspräsenz: Fotos und visuelle Nachweise der Geschäftstätigkeit',
+          'Branchenqualifikationen: Zulassungen bei regulierten Tätigkeiten'
         ]} />
-      </HighlightBox>
+      </ContentCard>
 
-      <HighlightBox variant="warning">
-        <h4><strong>Bei regulierten Branchen:</strong></h4>
-        <CheckList variant="arrow" items={[
-          'Berufszulassungen (Meisterbrief, Approbation, etc.)',
-          'Gewerbegenehmigungen (Gastronomie, Gesundheitswesen)',
-          'Zertifikate und Qualifikationsnachweise',
-          'Versicherungsnachweise (Berufshaftpflicht)'
-        ]} />
-      </HighlightBox>
+      <ImportantNote>
+        <p>
+          Die exakte Zusammenstellung hängt von vielen Faktoren ab: Ein Ladengeschäft benötigt andere Nachweise als ein Service-Unternehmen, ein virtuelles Büro andere als ein traditionelles Gewerbe. Eine sanfte Sperrung kann mit weniger Dokumentation aufhebbar sein als eine harte Sperrung.
+        </p>
+      </ImportantNote>
+
+      <ContentCard title="Situationsabhängige Anforderungen">
+        <p>Je nach Ihrem Geschäftsmodell und Sperrungsgrund können unterschiedliche Schwerpunkte gesetzt werden:</p>
+        <ul>
+          <li><strong>Virtuelle Büros:</strong> Besonderer Fokus auf Nachweise der tatsächlichen Geschäftstätigkeit</li>
+          <li><strong>Service Area Business:</strong> Dokumentation der Kundentermine vor Ort</li>
+          <li><strong>Regulierte Branchen:</strong> Zusätzliche Qualifikationsnachweise erforderlich</li>
+          <li><strong>Mehrfach-Sperrungen:</strong> Umfangreichere Dokumentation zur Glaubwürdigkeit</li>
+        </ul>
+      </ContentCard>
 
       <CTASection 
-        text="Dokumente-Checkliste erstellen"
-        subtitle="Erhalten Sie eine individuell auf Ihre Situation zugeschnittene Checkliste"
+        text="Individuelle Dokumenten-Checkliste erstellen"
+        subtitle="Ermitteln Sie in 5 Minuten, welche spezifischen Nachweise in Ihrem Fall relevant sind"
       />
 
       <h2>Häufige Fehler beim Einspruch</h2>
@@ -295,57 +261,30 @@ export default function GoogleProfilEinspruchPage() {
       <h2>Textvorlage für den Einspruch</h2>
 
       <p>
-        Nutzen Sie diese Struktur als Grundlage und passen Sie sie an Ihre spezifische Situation an:
+        Die optimale Formulierung und Struktur Ihres Einspruchs hängt stark vom identifizierten Sperrungsgrund und Ihrer individuellen Situation ab. Ein Einspruch bei Adressproblemen erfordert andere Schwerpunkte als einer bei Keyword-Verstößen.
       </p>
 
-      <div className="bg-slate-50 dark:bg-slate-800 p-6 rounded-lg border border-slate-200 dark:border-slate-700 my-8">
-        <p className="font-semibold mb-4">Beispiel-Einspruch:</p>
-        
-        <p className="mb-4"><strong>Betreff:</strong> Antrag auf Überprüfung der Sperrung – [Ihr Firmenname]</p>
-        
-        <p className="mb-4">Sehr geehrte Damen und Herren,</p>
-        
-        <p className="mb-4">
-          wir beantragen hiermit die Überprüfung der Sperrung unseres Google Business Profiles für [Firmenname], [Adresse].
-        </p>
-        
-        <p className="mb-4">
-          <strong>Zu unserer Situation:</strong><br />
-          Wir sind ein [seit X Jahren] etabliertes [Branche]-Unternehmen mit Sitz in [Ort]. An unserer Geschäftsadresse betreiben wir [Art der Tätigkeit] und sind während der angegebenen Geschäftszeiten für Kunden persönlich erreichbar.
-        </p>
-        
-        <p className="mb-4">
-          <strong>Zu den möglichen Sperrungsgründen:</strong><br />
-          [Hier gehen Sie auf den vermuteten Grund ein, z.B.:]<br />
-          Wir vermuten, dass die Sperrung aufgrund [Grund] erfolgte. Hierzu möchten wir klarstellen: [Ihre Erklärung]. Als Nachweis haben wir folgende Unterlagen beigefügt: [Liste].
-        </p>
-        
-        <p className="mb-4">
-          <strong>Beigefügte Nachweise:</strong>
-        </p>
-        <ul className="mb-4 ml-6 list-disc">
-          <li>Gewerbeanmeldung (aktueller Auszug)</li>
-          <li>Versorgungsrechnung auf Firmennamen (nicht älter als 3 Monate)</li>
-          <li>Fotos der Geschäftsbeschilderung (2 Perspektiven)</li>
-          <li>Innenraum-Fotos unserer Geschäftsräume (5 Aufnahmen)</li>
-          <li>[Weitere relevante Dokumente]</li>
-        </ul>
-        
-        <p className="mb-4">
-          Wir versichern, dass alle Informationen in unserem Profil korrekt sind und den Google-Richtlinien entsprechen. [Falls Sie Korrekturen vorgenommen haben:] Etwaige zuvor vorhandene Unstimmigkeiten wurden korrigiert, wie die beigefügten Screenshots belegen.
-        </p>
-        
-        <p className="mb-4">
-          Für Rückfragen oder weitere Informationen stehen wir jederzeit zur Verfügung.
-        </p>
-        
+      <ContentCard title="Grundprinzipien erfolgreicher Einsprüche" variant="primary">
+        <p>Unabhängig vom Sperrungsgrund sollten Sie folgende Elemente berücksichtigen:</p>
+        <CheckList variant="check" items={[
+          'Sachlicher, professioneller Ton ohne Emotionalität',
+          'Klare Benennung des Problems und der Korrekturmaßnahmen',
+          'Strukturierte Darstellung: Situation → Ursache → Lösung → Nachweise',
+          'Vollständige Liste aller beigefügten Dokumente',
+          'Versicherung der Richtlinienkonformität'
+        ]} />
+      </ContentCard>
+
+      <ImportantNote>
         <p>
-          Mit freundlichen Grüßen<br />
-          [Name]<br />
-          [Firma]<br />
-          [Kontaktdaten]
+          Während die Grundstruktur eines Einspruchs relativ konstant ist, variieren die inhaltlichen Schwerpunkte erheblich: Bei virtuellen Büros müssen Sie Ihre physische Präsenz nachweisen, bei NAP-Problemen die Korrektur der Inkonsistenzen dokumentieren, bei Keyword-Verstößen die Bereinigung des Firmennamens belegen. Eine generische Vorlage kann daher in vielen Fällen kontraproduktiv sein.
         </p>
-      </div>
+      </ImportantNote>
+
+      <CTASection 
+        text="Einspruchstext für Ihren Fall generieren"
+        subtitle="Erhalten Sie eine auf Ihre Situation zugeschnittene Einspruchsstruktur"
+      />
 
       <ImportantNote>
         <p>

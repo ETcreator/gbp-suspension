@@ -71,13 +71,14 @@ export default function GoogleProfilGesperrtGruendePage() {
         </p>
       </ContentCard>
 
-      <h3>So lösen Sie das Problem:</h3>
-      <CheckList variant="check" items={[
-        'Permanente Präsenz nachweisen: Mietvertrag, Versorgungsrechnungen auf Firmennamen, Fotos der Geschäftsbeschilderung',
-        'Für Service-Geschäfte: Konfigurieren Sie Ihr Profil korrekt als "Service Area Business" ohne spezifische Adresse',
-        'Bei Coworking: Nachweis über feste Platzbuchung und regelmäßige Anwesenheit',
-        'Konsistenz herstellen: Gleichen Sie Adressangaben auf Website, Gewerbeanmeldung und Google-Profil exakt ab'
-      ]} />
+      <h3>Lösungsansätze:</h3>
+      <p>
+        Die konkrete Vorgehensweise zur Behebung von Adressproblemen hängt stark von Ihrem Geschäftsmodell ab. Service-Unternehmen benötigen andere Nachweise als Ladengeschäfte, Coworking-Nutzer andere als traditionelle Büros. Eine pauschale Checkliste greift hier oft zu kurz.
+      </p>
+      <CTASection 
+        text="Adress-Problematik analysieren"
+        subtitle="Ermitteln Sie, welche Nachweise in Ihrer spezifischen Adress-Situation relevant sind"
+      />
 
       <div className="not-prose my-8">
         <InternalLinkBox 
