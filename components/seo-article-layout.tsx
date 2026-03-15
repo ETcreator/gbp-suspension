@@ -167,3 +167,139 @@ export function QuickTip({
     </div>
   )
 }
+
+export function ContentCard({ 
+  title,
+  children,
+  variant = 'default'
+}: {
+  title: string
+  children: ReactNode
+  variant?: 'default' | 'primary' | 'secondary'
+}) {
+  const variants = {
+    default: 'bg-white dark:bg-slate-800/50 border-slate-200 dark:border-slate-700',
+    primary: 'bg-blue-50 dark:bg-blue-950/30 border-blue-200 dark:border-blue-800',
+    secondary: 'bg-slate-50 dark:bg-slate-800/30 border-slate-200 dark:border-slate-700'
+  }
+
+  return (
+    <Card className={`not-prose my-8 p-6 ${variants[variant]}`}>
+      <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-100 mb-4">{title}</h3>
+      <div className="prose prose-slate dark:prose-invert max-w-none prose-p:mb-3 prose-ul:my-3 prose-li:my-1.5">
+        {children}
+      </div>
+    </Card>
+  )
+}
+
+export function StepBox({ 
+  number,
+  title,
+  children
+}: {
+  number: number
+  title: string
+  children: ReactNode
+}) {
+  return (
+    <div className="not-prose flex gap-4 my-6 p-6 bg-gradient-to-br from-white to-slate-50 dark:from-slate-800 dark:to-slate-900 rounded-lg border border-slate-200 dark:border-slate-700">
+      <div className="flex-shrink-0">
+        <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-full flex items-center justify-center font-bold text-xl shadow-md">
+          {number}
+        </div>
+      </div>
+      <div className="flex-1">
+        <h4 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-2">{title}</h4>
+        <div className="prose prose-slate dark:prose-invert max-w-none prose-p:text-sm prose-p:mb-2 prose-ul:my-2 prose-li:my-1">
+          {children}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export function ImportantNote({ 
+  children
+}: {
+  children: ReactNode
+}) {
+  return (
+    <div className="not-prose my-8 p-6 border-l-4 border-amber-500 bg-amber-50 dark:bg-amber-950/30 rounded-r-lg">
+      <div className="flex gap-3">
+        <div className="flex-shrink-0 mt-0.5">
+          <svg className="w-6 h-6 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+          </svg>
+        </div>
+        <div className="flex-1">
+          <div className="prose prose-slate dark:prose-invert max-w-none prose-p:text-sm prose-p:mb-2 prose-p:first:mt-0">
+            <strong className="text-amber-900 dark:text-amber-100">⚠️ Wichtig:</strong> {children}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export function TableOfContents({ 
+  items
+}: {
+  items: string[]
+}) {
+  return (
+    <Card className="not-prose my-10 p-6 bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800 border-slate-200 dark:border-slate-700">
+      <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4 flex items-center gap-2">
+        <svg className="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        In diesem Artikel:
+      </h3>
+      <ul className="space-y-2">
+        {items.map((item, index) => (
+          <li key={index} className="flex items-start gap-3 text-slate-700 dark:text-slate-300">
+            <span className="text-blue-600 dark:text-blue-400 mt-0.5">•</span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </Card>
+  )
+}
+
+export function CheckList({ 
+  items,
+  variant = 'check'
+}: {
+  items: string[]
+  variant?: 'check' | 'cross' | 'arrow'
+}) {
+  const icons = {
+    check: (
+      <svg className="w-5 h-5 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+      </svg>
+    ),
+    cross: (
+      <svg className="w-5 h-5 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    ),
+    arrow: (
+      <svg className="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+      </svg>
+    )
+  }
+
+  return (
+    <ul className="not-prose space-y-3 my-6">
+      {items.map((item, index) => (
+        <li key={index} className="flex items-start gap-3">
+          <span className="flex-shrink-0 mt-0.5">{icons[variant]}</span>
+          <span className="text-slate-700 dark:text-slate-300">{item}</span>
+        </li>
+      ))}
+    </ul>
+  )
+}

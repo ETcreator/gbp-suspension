@@ -1,5 +1,15 @@
 import { Metadata } from 'next'
-import { SEOArticleLayout, CTASection, InternalLinkBox } from '@/components/seo-article-layout'
+import { 
+  SEOArticleLayout, 
+  CTASection, 
+  InternalLinkBox,
+  ContentCard,
+  StepBox,
+  ImportantNote,
+  TableOfContents,
+  CheckList,
+  HighlightBox
+} from '@/components/seo-article-layout'
 
 export const metadata: Metadata = {
   title: 'Google Profil Einspruch einlegen – Schritt für Schritt Anleitung',
@@ -24,6 +34,14 @@ export default function GoogleProfilEinspruchPage() {
         Nach einer Sperrung Ihres Google Business Profiles ist der Einspruch der entscheidende Schritt zur Reaktivierung. Doch ein erfolgreicher Einspruch erfordert sorgfältige Vorbereitung, die richtigen Dokumente und eine professionelle Kommunikation. In diesem Leitfaden erfahren Sie, wie Sie Ihren Einspruch optimal vorbereiten und häufige Fehler vermeiden.
       </p>
 
+      <TableOfContents items={[
+        'Wann ein Einspruch sinnvoll ist',
+        'Welche Dokumente typischerweise nötig sind',
+        'Häufige Fehler beim Einspruch',
+        'Der optimale Einspruchs-Ablauf',
+        'Textvorlage für den Einspruch'
+      ]} />
+
       <CTASection text="Jetzt Einspruch vorbereiten" />
 
       <h2>Wann ein Einspruch sinnvoll ist</h2>
@@ -32,25 +50,29 @@ export default function GoogleProfilEinspruchPage() {
         Nicht in jeder Situation ist ein sofortiger Einspruch die beste Strategie. Prüfen Sie zunächst, ob folgende Voraussetzungen erfüllt sind:
       </p>
 
-      <h3>Einspruch ist sinnvoll, wenn:</h3>
-      <ul>
-        <li><strong>Die Sperrung unberechtigt ist:</strong> Ihr Unternehmen erfüllt alle Google-Richtlinien und die Sperrung beruht auf einem Missverständnis oder Fehler</li>
-        <li><strong>Sie alle Nachweise haben:</strong> Sie können die Legitimität Ihres Geschäfts durch offizielle Dokumente belegen</li>
-        <li><strong>Probleme wurden behoben:</strong> Falls ursprünglich Verstöße vorlagen, haben Sie diese bereits korrigiert</li>
-        <li><strong>Sie die Ursache kennen:</strong> Sie haben identifiziert, warum die Sperrung erfolgte und können gezielt darauf eingehen</li>
-      </ul>
+      <ContentCard title="✅ Einspruch ist sinnvoll, wenn:" variant="primary">
+        <CheckList variant="check" items={[
+          'Die Sperrung unberechtigt ist: Ihr Unternehmen erfüllt alle Google-Richtlinien und die Sperrung beruht auf einem Missverständnis oder Fehler',
+          'Sie alle Nachweise haben: Sie können die Legitimität Ihres Geschäfts durch offizielle Dokumente belegen',
+          'Probleme wurden behoben: Falls ursprünglich Verstöße vorlagen, haben Sie diese bereits korrigiert',
+          'Sie die Ursache kennen: Sie haben identifiziert, warum die Sperrung erfolgte und können gezielt darauf eingehen'
+        ]} />
+      </ContentCard>
 
-      <h3>Warten Sie mit dem Einspruch, wenn:</h3>
-      <ul>
-        <li><strong>Dokumente fehlen noch:</strong> Beschaffen Sie erst alle notwendigen Nachweise, bevor Sie den Einspruch einreichen</li>
-        <li><strong>Verstöße noch aktiv sind:</strong> Korrigieren Sie zuerst alle Richtlinienverstöße (z.B. Keyword-Stuffing im Namen, doppelte Profile)</li>
-        <li><strong>NAP-Daten inkonsistent sind:</strong> Gleichen Sie erst alle Kontaktdaten auf Website und anderen Plattformen ab</li>
-        <li><strong>Die Situation unklar ist:</strong> Analysieren Sie erst gründlich die wahrscheinlichen Ursachen</li>
-      </ul>
+      <ContentCard title="⏸️ Warten Sie mit dem Einspruch, wenn:" variant="secondary">
+        <CheckList variant="cross" items={[
+          'Dokumente fehlen noch: Beschaffen Sie erst alle notwendigen Nachweise, bevor Sie den Einspruch einreichen',
+          'Verstöße noch aktiv sind: Korrigieren Sie zuerst alle Richtlinienverstöße (z.B. Keyword-Stuffing im Namen, doppelte Profile)',
+          'NAP-Daten inkonsistent sind: Gleichen Sie erst alle Kontaktdaten auf Website und anderen Plattformen ab',
+          'Die Situation unklar ist: Analysieren Sie erst gründlich die wahrscheinlichen Ursachen'
+        ]} />
+      </ContentCard>
 
-      <p>
-        <strong>Wichtig:</strong> Ein voreiliger Einspruch ohne ausreichende Vorbereitung verschlechtert Ihre Chancen. Google protokolliert alle Einreichungen, und ein abgelehnter Einspruch erschwert spätere Versuche.
-      </p>
+      <ImportantNote>
+        <p>
+          Ein voreiliger Einspruch ohne ausreichende Vorbereitung verschlechtert Ihre Chancen. Google protokolliert alle Einreichungen, und ein abgelehnter Einspruch erschwert spätere Versuche.
+        </p>
+      </ImportantNote>
 
       <div className="not-prose my-8">
         <InternalLinkBox 
@@ -68,62 +90,63 @@ export default function GoogleProfilEinspruchPage() {
 
       <h3>Kerndokumente (sollten immer dabei sein)</h3>
 
-      <h4>1. Gewerbeanmeldung oder Handelsregisterauszug</h4>
-      <ul>
-        <li>Offizieller Nachweis vom Gewerbeamt oder Handelsregister</li>
-        <li>Muss aktuelle Geschäftsadresse enthalten</li>
-        <li>Nicht älter als 6 Monate</li>
-        <li>Als lesbare PDF-Datei (Scan in guter Qualität)</li>
-      </ul>
+      <ContentCard title="1. Gewerbeanmeldung oder Handelsregisterauszug">
+        <CheckList variant="check" items={[
+          'Offizieller Nachweis vom Gewerbeamt oder Handelsregister',
+          'Muss aktuelle Geschäftsadresse enthalten',
+          'Nicht älter als 6 Monate',
+          'Als lesbare PDF-Datei (Scan in guter Qualität)'
+        ]} />
+      </ContentCard>
 
-      <h4>2. Versorgungsrechnung auf Firmennamen</h4>
-      <ul>
-        <li>Strom-, Gas-, Wasser- oder Festnetz-Telefonrechnung</li>
-        <li>Ausgestellt auf den offiziellen Firmennamen</li>
-        <li>Nicht älter als 3 Monate</li>
-        <li>Geschäftsadresse muss sichtbar sein</li>
-      </ul>
+      <ContentCard title="2. Versorgungsrechnung auf Firmennamen">
+        <CheckList variant="check" items={[
+          'Strom-, Gas-, Wasser- oder Festnetz-Telefonrechnung',
+          'Ausgestellt auf den offiziellen Firmennamen',
+          'Nicht älter als 3 Monate',
+          'Geschäftsadresse muss sichtbar sein'
+        ]} />
+      </ContentCard>
 
-      <h4>3. Fotos der Geschäftsbeschilderung</h4>
-      <ul>
-        <li>Permanente Außenbeschilderung mit Firmennamen</li>
-        <li>Mindestens 2 Aufnahmen aus verschiedenen Perspektiven</li>
-        <li>Gebäude und Schild müssen erkennbar sein</li>
-        <li>Hohe Auflösung, gute Beleuchtung</li>
-      </ul>
+      <ContentCard title="3. Fotos der Geschäftsbeschilderung">
+        <CheckList variant="check" items={[
+          'Permanente Außenbeschilderung mit Firmennamen',
+          'Mindestens 2 Aufnahmen aus verschiedenen Perspektiven',
+          'Gebäude und Schild müssen erkennbar sein',
+          'Hohe Auflösung, gute Beleuchtung'
+        ]} />
+      </ContentCard>
 
-      <h4>4. Innenraum-Fotos der Geschäftsräume</h4>
-      <ul>
-        <li>Mindestens 5-8 professionelle Fotos</li>
-        <li>Empfangsbereich, Arbeitsplätze, Produkte/Ausstattung</li>
-        <li>Müssen geschäftliche Nutzung belegen</li>
-        <li>Keine privaten Wohnräume</li>
-      </ul>
+      <ContentCard title="4. Innenraum-Fotos der Geschäftsräume">
+        <CheckList variant="check" items={[
+          'Mindestens 5-8 professionelle Fotos',
+          'Empfangsbereich, Arbeitsplätze, Produkte/Ausstattung',
+          'Müssen geschäftliche Nutzung belegen',
+          'Keine privaten Wohnräume'
+        ]} />
+      </ContentCard>
 
       <h3>Zusätzliche Nachweise (je nach Situation)</h3>
 
-      <h4>Bei virtuellen Büros oder Coworking Spaces:</h4>
-      <ul>
-        <li>Mietvertrag für festen Arbeitsplatz (nicht nur Postadresse)</li>
-        <li>Nachweis über regelmäßige Anwesenheit</li>
-        <li>Foto Ihres beschrifteten Arbeitsplatzes</li>
-        <li>Bestätigung des Vermieters über Geschäftstätigkeit</li>
-      </ul>
+      <HighlightBox variant="info">
+        <h4><strong>Bei virtuellen Büros oder Coworking Spaces:</strong></h4>
+        <CheckList variant="arrow" items={[
+          'Mietvertrag für festen Arbeitsplatz (nicht nur Postadresse)',
+          'Nachweis über regelmäßige Anwesenheit',
+          'Foto Ihres beschrifteten Arbeitsplatzes',
+          'Bestätigung des Vermieters über Geschäftstätigkeit'
+        ]} />
+      </HighlightBox>
 
-      <h4>Bei regulierten Branchen:</h4>
-      <ul>
-        <li>Berufszulassungen (Meisterbrief, Approbation, etc.)</li>
-        <li>Gewerbegenehmigungen (Gastronomie, Gesundheitswesen)</li>
-        <li>Zertifikate und Qualifikationsnachweise</li>
-        <li>Versicherungsnachweise (Berufshaftpflicht)</li>
-      </ul>
-
-      <h4>Bei NAP-Inkonsistenzen:</h4>
-      <ul>
-        <li>Screenshots der korrigierten Website (Impressum, Kontaktseite)</li>
-        <li>Dokumentation der Bereinigung in anderen Verzeichnissen</li>
-        <li>Nachweis der Namensänderung (falls zutreffend)</li>
-      </ul>
+      <HighlightBox variant="warning">
+        <h4><strong>Bei regulierten Branchen:</strong></h4>
+        <CheckList variant="arrow" items={[
+          'Berufszulassungen (Meisterbrief, Approbation, etc.)',
+          'Gewerbegenehmigungen (Gastronomie, Gesundheitswesen)',
+          'Zertifikate und Qualifikationsnachweise',
+          'Versicherungsnachweise (Berufshaftpflicht)'
+        ]} />
+      </HighlightBox>
 
       <CTASection 
         text="Dokumente-Checkliste erstellen"
@@ -136,61 +159,30 @@ export default function GoogleProfilEinspruchPage() {
         Viele Einsprüche werden abgelehnt, weil vermeidbare Fehler gemacht wurden. Hier die häufigsten Stolpersteine:
       </p>
 
-      <h3>Fehler 1: Unvollständige Dokumentation</h3>
-      <p>
-        <strong>Problem:</strong> Es werden nur 2 von 4 geforderten Dokumenten eingereicht, in der Hoffnung, dass dies ausreicht.
-      </p>
-      <p>
-        <strong>Lösung:</strong> Reichen Sie von Anfang an alle relevanten Nachweise ein. Unvollständige Einsprüche werden meist direkt abgelehnt, ohne dass Google nachfragt.
-      </p>
+      <ContentCard title="❌ Fehler 1: Unvollständige Dokumentation">
+        <p><strong>Problem:</strong> Es werden nur 2 von 4 geforderten Dokumenten eingereicht, in der Hoffnung, dass dies ausreicht.</p>
+        <p><strong>Lösung:</strong> Reichen Sie von Anfang an alle relevanten Nachweise ein. Unvollständige Einsprüche werden meist direkt abgelehnt, ohne dass Google nachfragt.</p>
+      </ContentCard>
 
-      <h3>Fehler 2: Schlechte Dokumentenqualität</h3>
-      <p>
-        <strong>Problem:</strong> Unscharfe Fotos, unleserliche Scans oder zu klein komprimierte Dateien.
-      </p>
-      <p>
-        <strong>Lösung:</strong> Alle Dokumente müssen klar lesbar sein. Fotos sollten mindestens 1920x1080 Pixel haben, Scans mindestens 300 DPI. Testen Sie die Lesbarkeit auf einem anderen Gerät.
-      </p>
+      <ContentCard title="❌ Fehler 2: Schlechte Dokumentenqualität">
+        <p><strong>Problem:</strong> Unscharfe Fotos, unleserliche Scans oder zu klein komprimierte Dateien.</p>
+        <p><strong>Lösung:</strong> Alle Dokumente müssen klar lesbar sein. Fotos sollten mindestens 1920x1080 Pixel haben, Scans mindestens 300 DPI. Testen Sie die Lesbarkeit auf einem anderen Gerät.</p>
+      </ContentCard>
 
-      <h3>Fehler 3: Emotionale oder anklagende Formulierungen</h3>
-      <p>
-        <strong>Problem:</strong> "Diese Sperrung ist eine Frechheit! Wir verlieren dadurch täglich Kunden und sind kurz vor der Insolvenz!"
-      </p>
-      <p>
-        <strong>Lösung:</strong> Bleiben Sie sachlich und professionell. Konzentrieren Sie sich auf Fakten und Nachweise, nicht auf Emotionen. Google bearbeitet täglich tausende Fälle – Emotionen helfen nicht.
-      </p>
+      <ContentCard title="❌ Fehler 3: Emotionale oder anklagende Formulierungen">
+        <p><strong>Problem:</strong> "Diese Sperrung ist eine Frechheit! Wir verlieren dadurch täglich Kunden und sind kurz vor der Insolvenz!"</p>
+        <p><strong>Lösung:</strong> Bleiben Sie sachlich und professionell. Konzentrieren Sie sich auf Fakten und Nachweise, nicht auf Emotionen. Google bearbeitet täglich tausende Fälle – Emotionen helfen nicht.</p>
+      </ContentCard>
 
-      <h3>Fehler 4: Zu kurze oder zu lange Erklärungen</h3>
-      <p>
-        <strong>Problem:</strong> Entweder nur "Bitte reaktivieren Sie mein Profil" oder seitenlange Romane ohne Struktur.
-      </p>
-      <p>
-        <strong>Lösung:</strong> Optimal sind 300-600 Wörter: Kurze Einleitung, strukturierte Darstellung der Situation, Auflistung der Nachweise, höfliche Bitte um Überprüfung.
-      </p>
+      <ContentCard title="❌ Fehler 4: Zu kurze oder zu lange Erklärungen">
+        <p><strong>Problem:</strong> Entweder nur "Bitte reaktivieren Sie mein Profil" oder seitenlange Romane ohne Struktur.</p>
+        <p><strong>Lösung:</strong> Optimal sind 300-600 Wörter: Kurze Einleitung, strukturierte Darstellung der Situation, Auflistung der Nachweise, höfliche Bitte um Überprüfung.</p>
+      </ContentCard>
 
-      <h3>Fehler 5: Mehrfaches Einreichen desselben Einspruchs</h3>
-      <p>
-        <strong>Problem:</strong> Nach 2 Tagen noch keine Antwort, also wird der Einspruch nochmal geschickt, und noch einmal...
-      </p>
-      <p>
-        <strong>Lösung:</strong> Geduld haben. Die Bearbeitung dauert 5-14 Werktage. Mehrfache Einreichungen verzögern die Bearbeitung und wirken unprofessionell.
-      </p>
-
-      <h3>Fehler 6: Probleme nicht behoben</h3>
-      <p>
-        <strong>Problem:</strong> Einspruch wird eingereicht, obwohl der Firmenname noch immer "Müller Sanitär Berlin Notdienst 24/7" lautet.
-      </p>
-      <p>
-        <strong>Lösung:</strong> Beheben Sie ALLE identifizierten Probleme, bevor Sie den Einspruch einreichen. Dokumentieren Sie die Korrekturen mit Screenshots.
-      </p>
-
-      <h3>Fehler 7: Fehlende Konkretisierung</h3>
-      <p>
-        <strong>Problem:</strong> "Mein Profil wurde zu Unrecht gesperrt" ohne Erklärung, warum es unberechtigt ist.
-      </p>
-      <p>
-        <strong>Lösung:</strong> Gehen Sie konkret auf den vermuteten Sperrungsgrund ein und erklären Sie, warum dieser nicht zutrifft oder behoben wurde.
-      </p>
+      <ContentCard title="❌ Fehler 5: Mehrfaches Einreichen desselben Einspruchs">
+        <p><strong>Problem:</strong> Nach 2 Tagen noch keine Antwort, also wird der Einspruch nochmal geschickt, und noch einmal...</p>
+        <p><strong>Lösung:</strong> Geduld haben. Die Bearbeitung dauert 5-14 Werktage. Mehrfache Einreichungen verzögern die Bearbeitung und wirken unprofessionell.</p>
+      </ContentCard>
 
       <div className="not-prose my-8 grid gap-4 md:grid-cols-2">
         <InternalLinkBox 
@@ -213,82 +205,87 @@ export default function GoogleProfilEinspruchPage() {
 
       <h3>Phase 1: Vorbereitung (2-4 Tage)</h3>
 
-      <h4>Schritt 1: Ursachenanalyse</h4>
-      <ul>
-        <li>Identifizieren Sie den wahrscheinlichsten Sperrungsgrund</li>
-        <li>Prüfen Sie Ihr Profil auf Richtlinienverstöße</li>
-        <li>Notieren Sie alle relevanten Aspekte Ihrer Situation</li>
-      </ul>
+      <StepBox number={1} title="Ursachenanalyse">
+        <CheckList variant="arrow" items={[
+          'Identifizieren Sie den wahrscheinlichsten Sperrungsgrund',
+          'Prüfen Sie Ihr Profil auf Richtlinienverstöße',
+          'Notieren Sie alle relevanten Aspekte Ihrer Situation'
+        ]} />
+      </StepBox>
 
-      <h4>Schritt 2: Problembehebung</h4>
-      <ul>
-        <li>Korrigieren Sie alle identifizierten Verstöße</li>
-        <li>Gleichen Sie NAP-Daten überall ab</li>
-        <li>Entfernen Sie unzulässige Keywords</li>
-        <li>Löschen Sie doppelte Profile</li>
-      </ul>
+      <StepBox number={2} title="Problembehebung">
+        <CheckList variant="check" items={[
+          'Korrigieren Sie alle identifizierten Verstöße',
+          'Gleichen Sie NAP-Daten überall ab',
+          'Entfernen Sie unzulässige Keywords',
+          'Löschen Sie doppelte Profile'
+        ]} />
+      </StepBox>
 
-      <h4>Schritt 3: Dokumentenbeschaffung</h4>
-      <ul>
-        <li>Besorgen Sie alle notwendigen offiziellen Nachweise</li>
-        <li>Erstellen Sie professionelle Fotos</li>
-        <li>Scannen Sie alle Dokumente in hoher Qualität</li>
-        <li>Benennen Sie Dateien aussagekräftig (z.B. "Gewerbeanmeldung_Musterfirma.pdf")</li>
-      </ul>
+      <StepBox number={3} title="Dokumentenbeschaffung">
+        <CheckList variant="check" items={[
+          'Besorgen Sie alle notwendigen offiziellen Nachweise',
+          'Erstellen Sie professionelle Fotos',
+          'Scannen Sie alle Dokumente in hoher Qualität',
+          'Benennen Sie Dateien aussagekräftig (z.B. "Gewerbeanmeldung_Musterfirma.pdf")'
+        ]} />
+      </StepBox>
 
       <h3>Phase 2: Einspruchs-Formulierung (1 Tag)</h3>
 
-      <h4>Struktur des Einspruchs:</h4>
+      <ContentCard title="Struktur des Einspruchs" variant="primary">
+        <p><strong>Betreff:</strong> "Antrag auf Überprüfung der Sperrung – [Ihr Firmenname]"</p>
+        
+        <h4>Einleitung (2-3 Sätze):</h4>
+        <ul>
+          <li>Höfliche Anrede</li>
+          <li>Nennung des betroffenen Profils</li>
+          <li>Bitte um Überprüfung</li>
+        </ul>
 
-      <p><strong>Betreff:</strong> "Antrag auf Überprüfung der Sperrung – [Ihr Firmenname]"</p>
+        <h4>Hauptteil (strukturiert nach Punkten):</h4>
+        <ul>
+          <li>Kurze Beschreibung Ihres Unternehmens</li>
+          <li>Darstellung der Situation</li>
+          <li>Eingehen auf vermuteten Sperrungsgrund</li>
+          <li>Auflistung der beigefügten Nachweise</li>
+          <li>Beschreibung behobener Probleme (falls zutreffend)</li>
+        </ul>
 
-      <p><strong>Einleitung (2-3 Sätze):</strong></p>
-      <ul>
-        <li>Höfliche Anrede</li>
-        <li>Nennung des betroffenen Profils</li>
-        <li>Bitte um Überprüfung</li>
-      </ul>
-
-      <p><strong>Hauptteil (strukturiert nach Punkten):</strong></p>
-      <ul>
-        <li>Kurze Beschreibung Ihres Unternehmens</li>
-        <li>Darstellung der Situation</li>
-        <li>Eingehen auf vermuteten Sperrungsgrund</li>
-        <li>Auflistung der beigefügten Nachweise</li>
-        <li>Beschreibung behobener Probleme (falls zutreffend)</li>
-      </ul>
-
-      <p><strong>Schluss (2-3 Sätze):</strong></p>
-      <ul>
-        <li>Versicherung der Richtlinienkonformität</li>
-        <li>Angebot für weitere Informationen</li>
-        <li>Höfliche Grußformel</li>
-      </ul>
+        <h4>Schluss (2-3 Sätze):</h4>
+        <ul>
+          <li>Versicherung der Richtlinienkonformität</li>
+          <li>Angebot für weitere Informationen</li>
+          <li>Höfliche Grußformel</li>
+        </ul>
+      </ContentCard>
 
       <h3>Phase 3: Einreichung</h3>
 
-      <h4>So reichen Sie den Einspruch ein:</h4>
-      <ol>
-        <li>Melden Sie sich im Google Business Profile Manager an</li>
-        <li>Wählen Sie das gesperrte Profil aus</li>
-        <li>Klicken Sie auf "Support" oder "Hilfe"</li>
-        <li>Wählen Sie "Sperrung anfechten" oder "Kontosperrung"</li>
-        <li>Füllen Sie das Formular vollständig aus</li>
-        <li>Laden Sie alle Dokumente hoch (beachten Sie die Dateigrößenlimits)</li>
-        <li>Überprüfen Sie alles nochmal</li>
-        <li>Senden Sie den Einspruch ab</li>
-        <li>Notieren Sie sich Datum und ggf. Referenznummer</li>
-      </ol>
+      <StepBox number={4} title="So reichen Sie den Einspruch ein">
+        <ol>
+          <li>Melden Sie sich im Google Business Profile Manager an</li>
+          <li>Wählen Sie das gesperrte Profil aus</li>
+          <li>Klicken Sie auf "Support" oder "Hilfe"</li>
+          <li>Wählen Sie "Sperrung anfechten" oder "Kontosperrung"</li>
+          <li>Füllen Sie das Formular vollständig aus</li>
+          <li>Laden Sie alle Dokumente hoch (beachten Sie die Dateigrößenlimits)</li>
+          <li>Überprüfen Sie alles nochmal</li>
+          <li>Senden Sie den Einspruch ab</li>
+          <li>Notieren Sie sich Datum und ggf. Referenznummer</li>
+        </ol>
+      </StepBox>
 
       <h3>Phase 4: Nachverfolgung</h3>
 
-      <h4>Nach der Einreichung:</h4>
-      <ul>
-        <li><strong>Tage 1-5:</strong> Geduldig warten, nicht erneut einreichen</li>
-        <li><strong>Tag 10-14:</strong> Falls keine Antwort: Höfliche Status-Anfrage</li>
-        <li><strong>Bei Ablehnung:</strong> Gründe analysieren, fehlende Informationen ergänzen, erneut einreichen</li>
-        <li><strong>Bei Genehmigung:</strong> Profil sorgfältig überprüfen und optimieren</li>
-      </ul>
+      <ContentCard title="Nach der Einreichung">
+        <CheckList variant="arrow" items={[
+          'Tage 1-5: Geduldig warten, nicht erneut einreichen',
+          'Tag 10-14: Falls keine Antwort: Höfliche Status-Anfrage',
+          'Bei Ablehnung: Gründe analysieren, fehlende Informationen ergänzen, erneut einreichen',
+          'Bei Genehmigung: Profil sorgfältig überprüfen und optimieren'
+        ]} />
+      </ContentCard>
 
       <CTASection 
         text="Assistenz für Einspruchs-Vorbereitung"
@@ -350,47 +347,11 @@ export default function GoogleProfilEinspruchPage() {
         </p>
       </div>
 
-      <h2>Was nach dem Einspruch passiert</h2>
-
-      <h3>Typischer Bearbeitungsverlauf</h3>
-
-      <p><strong>Automatische Eingangsbestätigung (sofort):</strong></p>
-      <p>
-        Sie erhalten eine automatische E-Mail, dass Ihr Einspruch eingegangen ist. Diese enthält meist eine Referenznummer und die Information, dass die Bearbeitung 5-14 Werktage dauern kann.
-      </p>
-
-      <p><strong>Prüfphase (3-14 Tage):</strong></p>
-      <p>
-        Google-Mitarbeiter prüfen Ihren Fall. In dieser Zeit erhalten Sie normalerweise keine Zwischennachrichten. Haben Sie Geduld und reichen Sie den Einspruch nicht erneut ein.
-      </p>
-
-      <p><strong>Mögliche Ergebnisse:</strong></p>
-
-      <ul>
-        <li>
-          <strong>Genehmigung:</strong> Ihr Profil wird reaktiviert. Sie erhalten eine Bestätigungs-E-Mail. Prüfen Sie Ihr Profil sorgfältig und optimieren Sie es.
-        </li>
-        <li>
-          <strong>Ablehnung:</strong> Der Einspruch wurde abgelehnt. Die E-Mail enthält meist knappe Begründungen. Analysieren Sie die Gründe, ergänzen Sie fehlende Informationen und reichen Sie einen überarbeiteten Einspruch ein.
-        </li>
-        <li>
-          <strong>Nachfrage:</strong> Google benötigt zusätzliche Informationen. Liefern Sie diese zeitnah und vollständig nach.
-        </li>
-      </ul>
-
-      <h3>Bei Ablehnung nicht aufgeben</h3>
-
-      <p>
-        Eine Ablehnung bedeutet nicht das endgültige Aus. Viele erfolgreiche Reaktivierungen erfolgten im zweiten oder dritten Anlauf:
-      </p>
-
-      <ul>
-        <li>Analysieren Sie die Ablehnungsgründe genau</li>
-        <li>Identifizieren Sie, welche Informationen oder Nachweise gefehlt haben</li>
-        <li>Ergänzen Sie Ihre Dokumentation</li>
-        <li>Formulieren Sie einen neuen Einspruch mit Bezug auf die Ablehnung</li>
-        <li>Reichen Sie den überarbeiteten Einspruch nach mindestens 7 Tagen ein</li>
-      </ul>
+      <ImportantNote>
+        <p>
+          Bei Ablehnung nicht aufgeben! Viele erfolgreiche Reaktivierungen erfolgten im zweiten oder dritten Anlauf. Analysieren Sie die Ablehnungsgründe genau, ergänzen Sie fehlende Informationen und reichen Sie einen überarbeiteten Einspruch nach mindestens 7 Tagen ein.
+        </p>
+      </ImportantNote>
 
       <div className="not-prose my-8">
         <InternalLinkBox 

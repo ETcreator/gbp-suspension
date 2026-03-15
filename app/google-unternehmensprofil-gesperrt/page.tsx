@@ -1,5 +1,14 @@
 import { Metadata } from 'next'
-import { SEOArticleLayout, CTASection, InternalLinkBox } from '@/components/seo-article-layout'
+import { 
+  SEOArticleLayout, 
+  CTASection, 
+  InternalLinkBox, 
+  ContentCard,
+  StepBox,
+  ImportantNote,
+  TableOfContents,
+  CheckList
+} from '@/components/seo-article-layout'
 
 export const metadata: Metadata = {
   title: 'Google Unternehmensprofil gesperrt – Ursachen und Lösung | GBP Reaktivierung',
@@ -24,6 +33,14 @@ export default function GoogleUnternehmensprofilGesperrtPage() {
         Eine Sperrung des Google Unternehmensprofils kann massive Auswirkungen auf lokale Unternehmen haben: Sichtbarkeitsverlust in der Google-Suche, fehlende Kartenanzeige und damit einbrechende Kundenanfragen. In diesem Artikel erfahren Sie, warum Profile gesperrt werden und welche konkreten Schritte zur Reaktivierung führen.
       </p>
 
+      <TableOfContents items={[
+        'Unterschied zwischen sanfter und harter Sperrung',
+        'Häufige Ursachen für eine Sperrung',
+        'Welche Unterlagen Google häufig erwartet',
+        'Was Sie jetzt konkret tun sollten',
+        'Zeitrahmen und Erfolgsaussichten'
+      ]} />
+
       <CTASection />
 
       <h2>Unterschied zwischen sanfter und harter Sperrung</h2>
@@ -32,31 +49,35 @@ export default function GoogleUnternehmensprofilGesperrtPage() {
         Google unterscheidet bei Sperrungen zwischen zwei Varianten, die unterschiedliche Auswirkungen auf Ihr Geschäft haben:
       </p>
 
-      <h3>Sanfte Sperrung (Soft Suspension)</h3>
-      <p>
-        Bei einer sanften Sperrung bleibt Ihr Profil in der Google-Suche und auf Google Maps grundsätzlich sichtbar. Allerdings werden wichtige Funktionen eingeschränkt:
-      </p>
-      <ul>
-        <li>Sie können keine Änderungen an Ihrem Profil vornehmen</li>
-        <li>Neue Bewertungen werden möglicherweise nicht angezeigt</li>
-        <li>Die Ranking-Position in lokalen Suchergebnissen kann deutlich verschlechtert sein</li>
-        <li>Ihr Profil erscheint mit dem Hinweis "Vorübergehend geschlossen" oder ähnlichen Einschränkungen</li>
-      </ul>
+      <ContentCard title="Sanfte Sperrung (Soft Suspension)" variant="secondary">
+        <p>
+          Bei einer sanften Sperrung bleibt Ihr Profil in der Google-Suche und auf Google Maps grundsätzlich sichtbar. Allerdings werden wichtige Funktionen eingeschränkt:
+        </p>
+        <CheckList variant="cross" items={[
+          'Sie können keine Änderungen an Ihrem Profil vornehmen',
+          'Neue Bewertungen werden möglicherweise nicht angezeigt',
+          'Die Ranking-Position in lokalen Suchergebnissen kann deutlich verschlechtert sein',
+          'Ihr Profil erscheint mit dem Hinweis "Vorübergehend geschlossen" oder ähnlichen Einschränkungen'
+        ]} />
+      </ContentCard>
 
-      <h3>Harte Sperrung (Hard Suspension)</h3>
-      <p>
-        Eine harte Sperrung ist die schwerwiegendere Variante. Hierbei wird Ihr Profil komplett aus den Suchergebnissen und von Google Maps entfernt:
-      </p>
-      <ul>
-        <li>Das Profil ist für Nutzer nicht mehr auffindbar</li>
-        <li>Bestehende Bewertungen und Fotos sind nicht sichtbar</li>
-        <li>Kein direkter Kontakt über Google möglich (Anruf-Button, Routenplanung, etc.)</li>
-        <li>Massive Umsatzeinbußen, da potenzielle Kunden Sie nicht mehr über Google finden</li>
-      </ul>
+      <ContentCard title="Harte Sperrung (Hard Suspension)" variant="primary">
+        <p>
+          Eine harte Sperrung ist die schwerwiegendere Variante. Hierbei wird Ihr Profil komplett aus den Suchergebnissen und von Google Maps entfernt:
+        </p>
+        <CheckList variant="cross" items={[
+          'Das Profil ist für Nutzer nicht mehr auffindbar',
+          'Bestehende Bewertungen und Fotos sind nicht sichtbar',
+          'Kein direkter Kontakt über Google möglich (Anruf-Button, Routenplanung, etc.)',
+          'Massive Umsatzeinbußen, da potenzielle Kunden Sie nicht mehr über Google finden'
+        ]} />
+      </ContentCard>
 
-      <p>
-        Die Art der Sperrung gibt oft erste Hinweise auf die Schwere des vermuteten Verstoßes. Während sanfte Sperrungen häufig bei vermuteten technischen Problemen oder Unklarheiten auftreten, deutet eine harte Sperrung auf einen als schwerwiegend eingestuften Richtlinienverstoß hin.
-      </p>
+      <ImportantNote>
+        <p>
+          Die Art der Sperrung gibt oft erste Hinweise auf die Schwere des vermuteten Verstoßes. Während sanfte Sperrungen häufig bei vermuteten technischen Problemen oder Unklarheiten auftreten, deutet eine harte Sperrung auf einen als schwerwiegend eingestuften Richtlinienverstoß hin.
+        </p>
+      </ImportantNote>
 
       <h2>Häufige Ursachen für eine Sperrung</h2>
 
@@ -64,35 +85,41 @@ export default function GoogleUnternehmensprofilGesperrtPage() {
         Google sperrt Profile nicht willkürlich, sondern aufgrund konkreter Richtlinienverstöße oder Verdachtsmomente. Die häufigsten Ursachen sind:
       </p>
 
-      <h3>1. Virtuelle Büros und fehlende physische Präsenz</h3>
-      <p>
-        Einer der häufigsten Gründe für Sperrungen: Die Nutzung einer virtuellen Büroadresse ohne tatsächliche Geschäftstätigkeit vor Ort. Google verlangt, dass Kunden Sie an der angegebenen Adresse aufsuchen können oder Sie dort nachweislich geschäftlich tätig sind. Coworking Spaces sind nur zulässig, wenn Sie dort dauerhaft einen festen Arbeitsplatz haben.
-      </p>
+      <ContentCard title="1. Virtuelle Büros und fehlende physische Präsenz">
+        <p>
+          Einer der häufigsten Gründe für Sperrungen: Die Nutzung einer virtuellen Büroadresse ohne tatsächliche Geschäftstätigkeit vor Ort. Google verlangt, dass Kunden Sie an der angegebenen Adresse aufsuchen können oder Sie dort nachweislich geschäftlich tätig sind. Coworking Spaces sind nur zulässig, wenn Sie dort dauerhaft einen festen Arbeitsplatz haben.
+        </p>
+      </ContentCard>
 
-      <h3>2. Inkonsistente NAP-Daten</h3>
-      <p>
-        NAP steht für Name, Address, Phone (Name, Adresse, Telefonnummer). Wenn diese Daten auf Ihrer Website, in anderen Verzeichnissen oder im Google-Profil selbst nicht übereinstimmen, wertet Google dies als Vertrauenssignal-Problem. Selbst kleine Abweichungen wie "Str." statt "Straße" können problematisch sein.
-      </p>
+      <ContentCard title="2. Inkonsistente NAP-Daten">
+        <p>
+          NAP steht für Name, Address, Phone (Name, Adresse, Telefonnummer). Wenn diese Daten auf Ihrer Website, in anderen Verzeichnissen oder im Google-Profil selbst nicht übereinstimmen, wertet Google dies als Vertrauenssignal-Problem. Selbst kleine Abweichungen wie "Str." statt "Straße" können problematisch sein.
+        </p>
+      </ContentCard>
 
-      <h3>3. Keyword-Stuffing im Firmennamen</h3>
-      <p>
-        Das Hinzufügen von Suchbegriffen zum offiziellen Firmennamen ist ein klarer Richtlinienverstoß. Beispiel: "Müller Sanitär Berlin Notdienst 24h" statt einfach "Müller Sanitär". Solche Zusätze dienen ausschließlich der Suchmaschinenmanipulation und werden konsequent geahndet.
-      </p>
+      <ContentCard title="3. Keyword-Stuffing im Firmennamen">
+        <p>
+          Das Hinzufügen von Suchbegriffen zum offiziellen Firmennamen ist ein klarer Richtlinienverstoß. Beispiel: "Müller Sanitär Berlin Notdienst 24h" statt einfach "Müller Sanitär". Solche Zusätze dienen ausschließlich der Suchmaschinenmanipulation und werden konsequent geahndet.
+        </p>
+      </ContentCard>
 
-      <h3>4. Multiple Profile für denselben Standort</h3>
-      <p>
-        Mehrere Google Business Profile für dasselbe Unternehmen am gleichen Standort sind nicht zulässig. Dies passiert oft versehentlich, wenn verschiedene Mitarbeiter oder Dienstleister unabhängig voneinander Profile anlegen.
-      </p>
+      <ContentCard title="4. Multiple Profile für denselben Standort">
+        <p>
+          Mehrere Google Business Profile für dasselbe Unternehmen am gleichen Standort sind nicht zulässig. Dies passiert oft versehentlich, wenn verschiedene Mitarbeiter oder Dienstleister unabhängig voneinander Profile anlegen.
+        </p>
+      </ContentCard>
 
-      <h3>5. Unzureichende Nachweise der Geschäftsexistenz</h3>
-      <p>
-        Bei Neuerstellung oder nach Meldungen von Nutzern fordert Google oft Nachweise an. Fehlen diese oder wirken sie unglaubwürdig, erfolgt die Sperrung. Typische fehlende Nachweise: Gewerbeanmeldung, Geschäftsbeschilderung, Innenraumfotos, Versorgungsrechnungen auf den Firmennamen.
-      </p>
+      <ContentCard title="5. Unzureichende Nachweise der Geschäftsexistenz">
+        <p>
+          Bei Neuerstellung oder nach Meldungen von Nutzern fordert Google oft Nachweise an. Fehlen diese oder wirken sie unglaubwürdig, erfolgt die Sperrung. Typische fehlende Nachweise: Gewerbeanmeldung, Geschäftsbeschilderung, Innenraumfotos, Versorgungsrechnungen auf den Firmennamen.
+        </p>
+      </ContentCard>
 
-      <h3>6. Verdächtige Bewertungsaktivitäten</h3>
-      <p>
-        Der Kauf gefälschter Bewertungen oder koordinierte Bewertungsaktionen werden von Google erkannt und führen zur Sperrung. Auch das massenhafte Löschen negativer Bewertungen durch unzulässige Meldungen kann problematisch sein.
-      </p>
+      <ContentCard title="6. Verdächtige Bewertungsaktivitäten">
+        <p>
+          Der Kauf gefälschter Bewertungen oder koordinierte Bewertungsaktionen werden von Google erkannt und führen zur Sperrung. Auch das massenhafte Löschen negativer Bewertungen durch unzulässige Meldungen kann problematisch sein.
+        </p>
+      </ContentCard>
 
       <div className="not-prose my-8 grid gap-4 md:grid-cols-2">
         <InternalLinkBox 
@@ -114,22 +141,22 @@ export default function GoogleUnternehmensprofilGesperrtPage() {
       </p>
 
       <h3>Pflichtdokumente</h3>
-      <ul>
-        <li><strong>Gewerbeanmeldung oder Handelsregisterauszug:</strong> Offizieller Nachweis Ihrer Geschäftstätigkeit vom zuständigen Gewerbeamt oder Handelsregister</li>
-        <li><strong>Versorgungsrechnung:</strong> Strom-, Gas- oder Wasserrechnung auf den Firmennamen, nicht älter als 3 Monate</li>
-        <li><strong>Geschäftsbeschilderung:</strong> Fotos Ihrer permanenten Außenbeschilderung, die den Firmennamen gut lesbar zeigt</li>
-        <li><strong>Innenraumfotos:</strong> Professionelle Aufnahmen Ihrer Geschäftsräume (Empfangsbereich, Arbeitsplätze, Produkte/Dienstleistungen)</li>
-      </ul>
+      <CheckList variant="check" items={[
+        'Gewerbeanmeldung oder Handelsregisterauszug: Offizieller Nachweis Ihrer Geschäftstätigkeit vom zuständigen Gewerbeamt oder Handelsregister',
+        'Versorgungsrechnung: Strom-, Gas- oder Wasserrechnung auf den Firmennamen, nicht älter als 3 Monate',
+        'Geschäftsbeschilderung: Fotos Ihrer permanenten Außenbeschilderung, die den Firmennamen gut lesbar zeigt',
+        'Innenraumfotos: Professionelle Aufnahmen Ihrer Geschäftsräume (Empfangsbereich, Arbeitsplätze, Produkte/Dienstleistungen)'
+      ]} />
 
       <h3>Zusätzliche hilfreiche Nachweise</h3>
-      <ul>
-        <li>Mietvertrag oder Eigentumsnachweis für die Geschäftsadresse</li>
-        <li>Geschäftskonto-Auszüge, die Geschäftsaktivitäten belegen</li>
-        <li>Zertifikate, Lizenzen oder Qualifikationsnachweise (bei regulierten Branchen)</li>
-        <li>Kundenbelege oder Rechnungen, die Geschäftstätigkeit dokumentieren</li>
-        <li>Fotos von Firmenwagen mit Beschriftung</li>
-        <li>Visitenkarten, Briefpapier, anderes Geschäftsmaterial</li>
-      </ul>
+      <CheckList variant="arrow" items={[
+        'Mietvertrag oder Eigentumsnachweis für die Geschäftsadresse',
+        'Geschäftskonto-Auszüge, die Geschäftsaktivitäten belegen',
+        'Zertifikate, Lizenzen oder Qualifikationsnachweise (bei regulierten Branchen)',
+        'Kundenbelege oder Rechnungen, die Geschäftstätigkeit dokumentieren',
+        'Fotos von Firmenwagen mit Beschriftung',
+        'Visitenkarten, Briefpapier, anderes Geschäftsmaterial'
+      ]} />
 
       <h2>Was Sie jetzt konkret tun sollten</h2>
 
@@ -137,43 +164,44 @@ export default function GoogleUnternehmensprofilGesperrtPage() {
         Bei einer Sperrung sollten Sie strukturiert und zügig vorgehen. Hier die empfohlenen Schritte:
       </p>
 
-      <h3>Schritt 1: Art der Sperrung identifizieren</h3>
-      <p>
-        Prüfen Sie, ob Ihr Profil noch sichtbar ist (sanfte Sperrung) oder komplett verschwunden (harte Sperrung). Dies gibt Hinweise auf die Schwere des Problems und die zu erwartende Bearbeitungszeit.
-      </p>
+      <StepBox number={1} title="Art der Sperrung identifizieren">
+        <p>
+          Prüfen Sie, ob Ihr Profil noch sichtbar ist (sanfte Sperrung) oder komplett verschwunden (harte Sperrung). Dies gibt Hinweise auf die Schwere des Problems und die zu erwartende Bearbeitungszeit.
+        </p>
+      </StepBox>
 
-      <h3>Schritt 2: Mögliche Ursachen analysieren</h3>
-      <p>
-        Überprüfen Sie kritisch, welcher der oben genannten Punkte auf Ihre Situation zutreffen könnte:
-      </p>
-      <ul>
-        <li>Nutzen Sie eine virtuelle Büroadresse?</li>
-        <li>Stimmen Ihre NAP-Daten überall überein?</li>
-        <li>Enthält Ihr Firmenname unzulässige Zusätze?</li>
-        <li>Gibt es mehrere Profile für Ihren Standort?</li>
-        <li>Haben Sie alle geforderten Nachweise eingereicht?</li>
-      </ul>
+      <StepBox number={2} title="Mögliche Ursachen analysieren">
+        <p>Überprüfen Sie kritisch, welcher der oben genannten Punkte auf Ihre Situation zutreffen könnte:</p>
+        <ul>
+          <li>Nutzen Sie eine virtuelle Büroadresse?</li>
+          <li>Stimmen Ihre NAP-Daten überall überein?</li>
+          <li>Enthält Ihr Firmenname unzulässige Zusätze?</li>
+          <li>Gibt es mehrere Profile für Ihren Standort?</li>
+          <li>Haben Sie alle geforderten Nachweise eingereicht?</li>
+        </ul>
+      </StepBox>
 
-      <h3>Schritt 3: Probleme beheben</h3>
-      <p>
-        Bevor Sie Einspruch einlegen, sollten Sie identifizierte Probleme korrigieren:
-      </p>
-      <ul>
-        <li>Bereinigen Sie inkonsistente Daten auf Ihrer Website und in anderen Verzeichnissen</li>
-        <li>Entfernen Sie unzulässige Keywords aus dem Firmennamen</li>
-        <li>Löschen Sie doppelte Profile (lassen Sie nur das älteste bestehen)</li>
-        <li>Stellen Sie alle notwendigen Nachweise zusammen</li>
-      </ul>
+      <StepBox number={3} title="Probleme beheben">
+        <p>Bevor Sie Einspruch einlegen, sollten Sie identifizierte Probleme korrigieren:</p>
+        <CheckList variant="check" items={[
+          'Bereinigen Sie inkonsistente Daten auf Ihrer Website und in anderen Verzeichnissen',
+          'Entfernen Sie unzulässige Keywords aus dem Firmennamen',
+          'Löschen Sie doppelte Profile (lassen Sie nur das älteste bestehen)',
+          'Stellen Sie alle notwendigen Nachweise zusammen'
+        ]} />
+      </StepBox>
 
-      <h3>Schritt 4: Dokumentation vorbereiten</h3>
-      <p>
-        Erstellen Sie eine vollständige Dokumentenmappe mit allen relevanten Nachweisen. Achten Sie auf gute Qualität und Lesbarkeit aller Scans und Fotos.
-      </p>
+      <StepBox number={4} title="Dokumentation vorbereiten">
+        <p>
+          Erstellen Sie eine vollständige Dokumentenmappe mit allen relevanten Nachweisen. Achten Sie auf gute Qualität und Lesbarkeit aller Scans und Fotos.
+        </p>
+      </StepBox>
 
-      <h3>Schritt 5: Professionellen Einspruch formulieren</h3>
-      <p>
-        Der Einspruch sollte sachlich, präzise und vollständig sein. Vermeiden Sie emotionale Formulierungen oder Vorwürfe. Strukturieren Sie Ihre Argumentation klar und fügen Sie alle Nachweise als Anhänge bei.
-      </p>
+      <StepBox number={5} title="Professionellen Einspruch formulieren">
+        <p>
+          Der Einspruch sollte sachlich, präzise und vollständig sein. Vermeiden Sie emotionale Formulierungen oder Vorwürfe. Strukturieren Sie Ihre Argumentation klar und fügen Sie alle Nachweise als Anhänge bei.
+        </p>
+      </StepBox>
 
       <CTASection 
         text="Zum Profil-Check"
@@ -183,22 +211,31 @@ export default function GoogleUnternehmensprofilGesperrtPage() {
       <h2>Zeitrahmen und Erfolgsaussichten</h2>
 
       <p>
-        Die Bearbeitung eines Einspruchs durch Google dauert typischerweise zwischen 3 und 14 Werktagen. In komplexen Fällen kann es auch länger dauern. Wichtig: Reichen Sie nicht mehrfach denselben Einspruch ein, da dies die Bearbeitung verzögert.
+        Die Bearbeitung eines Einspruchs durch Google dauert typischerweise zwischen 3 und 14 Werktagen. In komplexen Fällen kann es auch länger dauern.
       </p>
+
+      <ImportantNote>
+        <p>
+          Reichen Sie nicht mehrfach denselben Einspruch ein, da dies die Bearbeitung verzögert.
+        </p>
+      </ImportantNote>
 
       <p>
         Die Erfolgsaussichten hängen stark von folgenden Faktoren ab:
       </p>
-      <ul>
-        <li><strong>Vollständigkeit der Unterlagen:</strong> Je lückenloser Ihre Dokumentation, desto höher die Erfolgswahrscheinlichkeit</li>
-        <li><strong>Klarheit des Falls:</strong> Eindeutige Situationen werden schneller positiv entschieden als komplexe Grenzfälle</li>
-        <li><strong>Qualität des Einspruchs:</strong> Professionell formulierte, strukturierte Einsprüche haben höhere Erfolgsraten</li>
-        <li><strong>Behebung der Ursachen:</strong> Nachweisliche Korrektur identifizierter Probleme verbessert die Chancen erheblich</li>
-      </ul>
 
-      <p>
-        Bei berechtigten Einsprüchen mit vollständiger Dokumentation liegt die Erfolgsrate erfahrungsgemäß bei über 80%. Wichtig ist jedoch, realistisch zu bleiben: Liegt tatsächlich ein schwerwiegender Richtlinienverstoß vor, wird Google die Sperrung aufrechterhalten.
-      </p>
+      <CheckList variant="check" items={[
+        'Vollständigkeit der Unterlagen: Je lückenloser Ihre Dokumentation, desto höher die Erfolgswahrscheinlichkeit',
+        'Klarheit des Falls: Eindeutige Situationen werden schneller positiv entschieden als komplexe Grenzfälle',
+        'Qualität des Einspruchs: Professionell formulierte, strukturierte Einsprüche haben höhere Erfolgsraten',
+        'Behebung der Ursachen: Nachweisliche Korrektur identifizierter Probleme verbessert die Chancen erheblich'
+      ]} />
+
+      <ContentCard title="Erfolgsrate bei berechtigten Einsprüchen" variant="primary">
+        <p>
+          Bei berechtigten Einsprüchen mit vollständiger Dokumentation liegt die Erfolgsrate erfahrungsgemäß bei <strong>über 80%</strong>. Wichtig ist jedoch, realistisch zu bleiben: Liegt tatsächlich ein schwerwiegender Richtlinienverstoß vor, wird Google die Sperrung aufrechterhalten.
+        </p>
+      </ContentCard>
 
       <h2>Vorbeugende Maßnahmen für die Zukunft</h2>
 
@@ -206,14 +243,14 @@ export default function GoogleUnternehmensprofilGesperrtPage() {
         Nach erfolgreicher Reaktivierung sollten Sie Maßnahmen ergreifen, um zukünftige Sperrungen zu vermeiden:
       </p>
 
-      <ul>
-        <li>Halten Sie Profildaten stets aktuell und konsistent über alle Plattformen hinweg</li>
-        <li>Dokumentieren Sie alle Änderungen am Profil</li>
-        <li>Reagieren Sie zeitnah auf Bewertungen (positiv und negativ)</li>
-        <li>Laden Sie regelmäßig aktuelle Fotos hoch</li>
-        <li>Vermeiden Sie jegliche Form von Manipulation (gekaufte Bewertungen, Keyword-Stuffing, etc.)</li>
-        <li>Überprüfen Sie regelmäßig die Google Business Profile Richtlinien auf Änderungen</li>
-      </ul>
+      <CheckList variant="check" items={[
+        'Halten Sie Profildaten stets aktuell und konsistent über alle Plattformen hinweg',
+        'Dokumentieren Sie alle Änderungen am Profil',
+        'Reagieren Sie zeitnah auf Bewertungen (positiv und negativ)',
+        'Laden Sie regelmäßig aktuelle Fotos hoch',
+        'Vermeiden Sie jegliche Form von Manipulation (gekaufte Bewertungen, Keyword-Stuffing, etc.)',
+        'Überprüfen Sie regelmäßig die Google Business Profile Richtlinien auf Änderungen'
+      ]} />
 
       <div className="not-prose my-12">
         <InternalLinkBox 
