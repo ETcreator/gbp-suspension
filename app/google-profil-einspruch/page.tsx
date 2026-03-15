@@ -126,29 +126,34 @@ export default function GoogleProfilEinspruchPage() {
       </p>
 
       <ContentCard title="❌ Fehler 1: Unvollständige Dokumentation">
-        <p><strong>Problem:</strong> Es werden nur 2 von 4 geforderten Dokumenten eingereicht, in der Hoffnung, dass dies ausreicht.</p>
-        <p><strong>Lösung:</strong> Reichen Sie von Anfang an alle relevanten Nachweise ein. Unvollständige Einsprüche werden meist direkt abgelehnt, ohne dass Google nachfragt.</p>
+        <p><strong>Problem:</strong> Es werden nur einige Dokumente eingereicht, in der Hoffnung, dass dies ausreicht.</p>
+        <p><strong>Warum das schadet:</strong> Google prüft Einsprüche anhand eines strikten Kriterienkatalogs. Fehlen zentrale Nachweise, wird der Einspruch häufig direkt abgelehnt – ohne Nachfrage oder zweite Chance. Welche Dokumente als "zentral" gelten, hängt jedoch stark vom konkreten Sperrungsgrund ab: Bei Adressproblemen sind andere Nachweise entscheidend als bei Keyword-Verstößen oder NAP-Inkonsistenzen.</p>
       </ContentCard>
 
       <ContentCard title="❌ Fehler 2: Schlechte Dokumentenqualität">
         <p><strong>Problem:</strong> Unscharfe Fotos, unleserliche Scans oder zu klein komprimierte Dateien.</p>
-        <p><strong>Lösung:</strong> Alle Dokumente müssen klar lesbar sein. Fotos sollten mindestens 1920x1080 Pixel haben, Scans mindestens 300 DPI. Testen Sie die Lesbarkeit auf einem anderen Gerät.</p>
+        <p><strong>Warum das schadet:</strong> Unklare Dokumente erschweren die Prüfung erheblich. Google muss eindeutig erkennen können, dass Ihr Unternehmen real existiert und an der angegebenen Adresse tätig ist. Die Qualitätsanforderungen variieren je nach Dokumenttyp: Geschäftsbeschilderung muss anders dokumentiert werden als Innenraumfotos, behördliche Dokumente haben andere Standards als Mietverträge. Pauschale Vorgaben greifen hier zu kurz.</p>
       </ContentCard>
 
       <ContentCard title="❌ Fehler 3: Emotionale oder anklagende Formulierungen">
         <p><strong>Problem:</strong> "Diese Sperrung ist eine Frechheit! Wir verlieren dadurch täglich Kunden und sind kurz vor der Insolvenz!"</p>
-        <p><strong>Lösung:</strong> Bleiben Sie sachlich und professionell. Konzentrieren Sie sich auf Fakten und Nachweise, nicht auf Emotionen. Google bearbeitet täglich tausende Fälle – Emotionen helfen nicht.</p>
+        <p><strong>Warum das schadet:</strong> Emotionale Einsprüche wirken unprofessionell und lenken von den sachlichen Argumenten ab. Google bearbeitet täglich tausende Fälle nach standardisierten Kriterien – persönliche Betroffenheit ist kein Bewertungsfaktor. Ein erfolgreicher Einspruch folgt einer klaren argumentativen Struktur, die je nach Sperrungsgrund unterschiedlich gewichtet werden muss.</p>
       </ContentCard>
 
-      <ContentCard title="❌ Fehler 4: Zu kurze oder zu lange Erklärungen">
-        <p><strong>Problem:</strong> Entweder nur "Bitte reaktivieren Sie mein Profil" oder seitenlange Romane ohne Struktur.</p>
-        <p><strong>Lösung:</strong> Optimal sind 300-600 Wörter: Kurze Einleitung, strukturierte Darstellung der Situation, Auflistung der Nachweise, höfliche Bitte um Überprüfung.</p>
+      <ContentCard title="❌ Fehler 4: Falsche Länge und Struktur">
+        <p><strong>Problem:</strong> Entweder nur "Bitte reaktivieren Sie mein Profil" oder seitenlange Romane ohne klare Struktur.</p>
+        <p><strong>Warum das schadet:</strong> Zu kurze Einsprüche wirken nachlässig, zu lange unübersichtlich. Die optimale Länge und Detailtiefe hängt vom Komplexitätsgrad des Falls ab: Ein einfacher Keyword-Verstoß erfordert weniger Erklärung als eine komplexe Coworking-Situation mit mehreren potenziellen Problemen. Die Kunst liegt darin, alle relevanten Punkte anzusprechen, ohne irrelevante Details zu verschleiern.</p>
       </ContentCard>
 
       <ContentCard title="❌ Fehler 5: Mehrfaches Einreichen desselben Einspruchs">
-        <p><strong>Problem:</strong> Nach 2 Tagen noch keine Antwort, also wird der Einspruch nochmal geschickt, und noch einmal...</p>
-        <p><strong>Lösung:</strong> Geduld haben. Die Bearbeitung dauert 5-14 Werktage. Mehrfache Einreichungen verzögern die Bearbeitung und wirken unprofessionell.</p>
+        <p><strong>Problem:</strong> Nach wenigen Tagen ohne Antwort wird der identische Einspruch erneut eingereicht.</p>
+        <p><strong>Warum das schadet:</strong> Google protokolliert alle Einreichungen. Mehrfache identische Einsprüche signalisieren Ungeduld und können als Spam gewertet werden, was die Bearbeitung verzögert. Zudem wird dabei die Chance verpasst, den Einspruch bei ausbleibender Antwort strategisch zu überarbeiten und mit zusätzlichen Argumenten oder Nachweisen zu verstärken.</p>
       </ContentCard>
+
+      <CTASection 
+        text="Fehleranalyse für Ihren Einspruch"
+        subtitle="Ermitteln Sie in wenigen Minuten, welche häufigen Fehler Sie vermeiden sollten und wie Ihr Einspruch optimal strukturiert wird"
+      />
 
       <div className="not-prose my-8 grid gap-4 md:grid-cols-2">
         <InternalLinkBox 
@@ -166,96 +171,62 @@ export default function GoogleProfilEinspruchPage() {
       <h2>Der optimale Einspruchs-Ablauf</h2>
 
       <p>
-        Folgen Sie diesem bewährten Prozess für maximale Erfolgsaussichten:
+        Ein erfolgreicher Einspruch durchläuft mehrere kritische Phasen. Die konkrete Umsetzung jeder Phase hängt stark vom identifizierten Sperrungsgrund ab – ein universeller Prozess existiert nicht.
       </p>
 
-      <h3>Phase 1: Vorbereitung (2-4 Tage)</h3>
+      <h3>Phase 1: Analyse der Sperrung</h3>
 
-      <StepBox number={1} title="Ursachenanalyse">
-        <CheckList variant="arrow" items={[
-          'Identifizieren Sie den wahrscheinlichsten Sperrungsgrund',
-          'Prüfen Sie Ihr Profil auf Richtlinienverstöße',
-          'Notieren Sie alle relevanten Aspekte Ihrer Situation'
-        ]} />
-      </StepBox>
-
-      <StepBox number={2} title="Problembehebung">
-        <CheckList variant="check" items={[
-          'Korrigieren Sie alle identifizierten Verstöße',
-          'Gleichen Sie NAP-Daten überall ab',
-          'Entfernen Sie unzulässige Keywords',
-          'Löschen Sie doppelte Profile'
-        ]} />
-      </StepBox>
-
-      <StepBox number={3} title="Dokumentenbeschaffung">
-        <CheckList variant="check" items={[
-          'Besorgen Sie alle notwendigen offiziellen Nachweise',
-          'Erstellen Sie professionelle Fotos',
-          'Scannen Sie alle Dokumente in hoher Qualität',
-          'Benennen Sie Dateien aussagekräftig (z.B. "Gewerbeanmeldung_Musterfirma.pdf")'
-        ]} />
-      </StepBox>
-
-      <h3>Phase 2: Einspruchs-Formulierung (1 Tag)</h3>
-
-      <ContentCard title="Struktur des Einspruchs" variant="primary">
-        <p><strong>Betreff:</strong> "Antrag auf Überprüfung der Sperrung – [Ihr Firmenname]"</p>
-        
-        <h4>Einleitung (2-3 Sätze):</h4>
-        <ul>
-          <li>Höfliche Anrede</li>
-          <li>Nennung des betroffenen Profils</li>
-          <li>Bitte um Überprüfung</li>
-        </ul>
-
-        <h4>Hauptteil (strukturiert nach Punkten):</h4>
-        <ul>
-          <li>Kurze Beschreibung Ihres Unternehmens</li>
-          <li>Darstellung der Situation</li>
-          <li>Eingehen auf vermuteten Sperrungsgrund</li>
-          <li>Auflistung der beigefügten Nachweise</li>
-          <li>Beschreibung behobener Probleme (falls zutreffend)</li>
-        </ul>
-
-        <h4>Schluss (2-3 Sätze):</h4>
-        <ul>
-          <li>Versicherung der Richtlinienkonformität</li>
-          <li>Angebot für weitere Informationen</li>
-          <li>Höfliche Grußformel</li>
-        </ul>
+      <ContentCard title="Warum diese Phase entscheidend ist" variant="primary">
+        <p>
+          Die korrekte Identifikation des Sperrungsgrunds bestimmt alle weiteren Schritte. Eine Fehleinschätzung führt dazu, dass Sie die falschen Nachweise sammeln, an den falschen Stellen korrigieren und Ihren Einspruch auf das falsche Problem ausrichten. Google kommuniziert selten explizit den genauen Grund – Sie müssen ihn aus Indizien ableiten.
+        </p>
+        <p className="mt-3">
+          Die Analyse erfordert ein systematisches Durchgehen möglicher Richtlinienverstöße: Adressprobleme, NAP-Inkonsistenzen, Keyword-Spam, doppelte Profile, Kategorie-Fehler oder verdächtige Aktivitätsmuster. Häufig liegen mehrere Probleme gleichzeitig vor, die priorisiert werden müssen.
+        </p>
       </ContentCard>
 
-      <h3>Phase 3: Einreichung</h3>
+      <h3>Phase 2: Bereinigung identifizierter Probleme</h3>
 
-      <StepBox number={4} title="So reichen Sie den Einspruch ein">
-        <ol>
-          <li>Melden Sie sich im Google Business Profile Manager an</li>
-          <li>Wählen Sie das gesperrte Profil aus</li>
-          <li>Klicken Sie auf "Support" oder "Hilfe"</li>
-          <li>Wählen Sie "Sperrung anfechten" oder "Kontosperrung"</li>
-          <li>Füllen Sie das Formular vollständig aus</li>
-          <li>Laden Sie alle Dokumente hoch (beachten Sie die Dateigrößenlimits)</li>
-          <li>Überprüfen Sie alles nochmal</li>
-          <li>Senden Sie den Einspruch ab</li>
-          <li>Notieren Sie sich Datum und ggf. Referenznummer</li>
-        </ol>
-      </StepBox>
-
-      <h3>Phase 4: Nachverfolgung</h3>
-
-      <ContentCard title="Nach der Einreichung">
-        <CheckList variant="arrow" items={[
-          'Tage 1-5: Geduldig warten, nicht erneut einreichen',
-          'Tag 10-14: Falls keine Antwort: Höfliche Status-Anfrage',
-          'Bei Ablehnung: Gründe analysieren, fehlende Informationen ergänzen, erneut einreichen',
-          'Bei Genehmigung: Profil sorgfältig überprüfen und optimieren'
-        ]} />
+      <ContentCard title="Warum Korrekturen vor dem Einspruch erfolgen müssen">
+        <p>
+          Ein Einspruch bei noch aktiven Richtlinienverstößen wird nahezu immer abgelehnt. Die Herausforderung liegt darin, zu erkennen, welche Änderungen vorgenommen werden müssen, ohne dabei neue Probleme zu schaffen oder die Sperrung zu verschlimmern.
+        </p>
+        <p className="mt-3">
+          Bei NAP-Inkonsistenzen etwa muss entschieden werden, welche Variante die "korrekte" ist und in welcher Reihenfolge verschiedene Plattformen aktualisiert werden. Bei Keyword-Verstößen im Firmennamen muss geklärt werden, ob auch die Gewerbeanmeldung geändert werden muss. Solche Entscheidungen sind hochgradig situationsabhängig.
+        </p>
       </ContentCard>
+
+      <h3>Phase 3: Zusammenstellung relevanter Nachweise</h3>
+
+      <ContentCard title="Warum die Dokumentation kontextspezifisch sein muss">
+        <p>
+          Die benötigten Nachweise variieren erheblich je nach Sperrungsgrund und Geschäftsmodell. Ein virtuelles Büro erfordert andere Belege als ein Ladengeschäft. Eine sanfte Sperrung oft weniger Dokumentation als eine harte Sperrung. Regulierte Branchen haben zusätzliche Anforderungen.
+        </p>
+        <p className="mt-3">
+          Auch die Qualität und Aufbereitung der Dokumente folgt keinem Pauschalstandard: Welche Fotos sind aussagekräftig? Welche behördlichen Bescheinigungen akzeptiert Google? Wie müssen Nachweise bei Coworking-Adressen aussehen? Diese Fragen können nur mit Kenntnis des konkreten Falls beantwortet werden.
+        </p>
+      </ContentCard>
+
+      <h3>Phase 4: Strukturierung der Argumentation</h3>
+
+      <ContentCard title="Warum die Einspruchsstruktur sperrungsabhängig ist">
+        <p>
+          Die optimale Argumentation und Gewichtung der einzelnen Punkte hängt vom Sperrungsgrund ab. Bei Adressproblemen steht die physische Präsenz im Vordergrund, bei Keyword-Verstößen die Begründung der Namensänderung, bei NAP-Problemen die Korrektur der Inkonsistenzen.
+        </p>
+        <p className="mt-3">
+          Auch Tonalität und Detailgrad müssen angepasst werden: Komplexe Grenzfälle erfordern ausführlichere Erklärungen als eindeutige Situationen. Bei Mehrfach-Sperrungen muss besonderer Wert auf Glaubwürdigkeit gelegt werden. Diese Nuancen entscheiden oft über Erfolg oder Ablehnung.
+        </p>
+      </ContentCard>
+
+      <ImportantNote>
+        <p>
+          Der Zeitrahmen für einen Einspruch ist individuell verschieden. Manche Fälle lassen sich innerhalb weniger Tage vorbereiten, andere benötigen Wochen – etwa wenn erst behördliche Dokumente beschafft, Inkonsistenzen über viele Plattformen bereinigt oder komplexe Adressprobleme gelöst werden müssen.
+        </p>
+      </ImportantNote>
 
       <CTASection 
-        text="Assistenz für Einspruchs-Vorbereitung"
-        subtitle="Lassen Sie sich bei der Vorbereitung Ihres Einspruchs unterstützen"
+        text="Individuellen Einspruchs-Plan erstellen"
+        subtitle="Ermitteln Sie in wenigen Minuten, welcher Sperrungsgrund bei Ihrem Profil wahrscheinlich ist und welche Schritte in Ihrem konkreten Fall sinnvoll sind"
       />
 
       <h2>Textvorlage für den Einspruch</h2>
