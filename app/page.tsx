@@ -114,6 +114,67 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Ratgeber Section */}
+      <section className="py-24 px-4">
+        <div className="container max-w-4xl mx-auto space-y-12">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight text-center">
+            Hilfreiche Ratgeber
+          </h2>
+          <div className="grid gap-6 md:grid-cols-3">
+            <Card className="p-6 hover:shadow-lg transition-shadow duration-200">
+              <Link href="/google-unternehmensprofil-gesperrt" className="block space-y-4 group">
+                <h3 className="text-xl font-semibold text-blue-700 dark:text-blue-400 group-hover:text-blue-800 dark:group-hover:text-blue-300">
+                  Profil gesperrt?
+                </h3>
+                <p className="text-slate-600 dark:text-slate-300">
+                  Verstehen Sie die Ursachen und erfahren Sie, welche Schritte zur Reaktivierung führen.
+                </p>
+                <span className="text-sm text-blue-700 dark:text-blue-400 font-medium inline-flex items-center">
+                  Mehr erfahren
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </Link>
+            </Card>
+            
+            <Card className="p-6 hover:shadow-lg transition-shadow duration-200">
+              <Link href="/google-profil-einspruch" className="block space-y-4 group">
+                <h3 className="text-xl font-semibold text-blue-700 dark:text-blue-400 group-hover:text-blue-800 dark:group-hover:text-blue-300">
+                  Einspruch einlegen
+                </h3>
+                <p className="text-slate-600 dark:text-slate-300">
+                  Schritt-für-Schritt-Anleitung für einen erfolgreichen Einspruch bei Google.
+                </p>
+                <span className="text-sm text-blue-700 dark:text-blue-400 font-medium inline-flex items-center">
+                  Mehr erfahren
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </Link>
+            </Card>
+            
+            <Card className="p-6 hover:shadow-lg transition-shadow duration-200">
+              <Link href="/google-profil-gesperrt-gruende" className="block space-y-4 group">
+                <h3 className="text-xl font-semibold text-blue-700 dark:text-blue-400 group-hover:text-blue-800 dark:group-hover:text-blue-300">
+                  7 Sperrungsgründe
+                </h3>
+                <p className="text-slate-600 dark:text-slate-300">
+                  Die häufigsten Ursachen für gesperrte Profile und wie Sie diese vermeiden.
+                </p>
+                <span className="text-sm text-blue-700 dark:text-blue-400 font-medium inline-flex items-center">
+                  Mehr erfahren
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </Link>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="py-24 px-4 bg-white/50 dark:bg-slate-900/50">
         <div className="container max-w-4xl mx-auto space-y-12">

@@ -22,6 +22,21 @@ export function SEOArticleLayout({
 }) {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100 dark:from-slate-950 dark:to-slate-900">
+      {/* Header with back to home link */}
+      <header className="border-b border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50">
+        <div className="container max-w-4xl mx-auto py-4 px-4">
+          <Link 
+            href="/" 
+            className="inline-flex items-center text-sm text-slate-600 dark:text-slate-400 hover:text-blue-700 dark:hover:text-blue-400 transition-colors"
+          >
+            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            Zurück zur Startseite
+          </Link>
+        </div>
+      </header>
+
       <article className="container max-w-4xl mx-auto py-12 px-4">
         <div className="prose prose-lg dark:prose-invert max-w-none prose-headings:font-semibold prose-h1:text-4xl prose-h1:mb-8 prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-6 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-4 prose-p:text-slate-700 dark:prose-p:text-slate-300 prose-p:leading-relaxed prose-li:text-slate-700 dark:prose-li:text-slate-300">
           {children}
