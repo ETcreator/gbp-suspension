@@ -38,7 +38,17 @@ export function SEOArticleLayout({
       </header>
 
       <article className="container max-w-4xl mx-auto py-12 px-4">
-        <div className="prose prose-lg dark:prose-invert max-w-none prose-headings:font-semibold prose-h1:text-4xl prose-h1:mb-8 prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-6 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-4 prose-p:text-slate-700 dark:prose-p:text-slate-300 prose-p:leading-relaxed prose-li:text-slate-700 dark:prose-li:text-slate-300">
+        <div className="prose prose-lg dark:prose-invert max-w-none 
+          prose-headings:font-semibold 
+          prose-h1:text-4xl prose-h1:mb-8 prose-h1:tracking-tight
+          prose-h2:text-3xl prose-h2:mt-16 prose-h2:mb-8 prose-h2:pb-4 prose-h2:border-b prose-h2:border-slate-200 dark:prose-h2:border-slate-700
+          prose-h3:text-xl prose-h3:mt-10 prose-h3:mb-4 prose-h3:text-blue-700 dark:prose-h3:text-blue-400
+          prose-h4:text-lg prose-h4:mt-6 prose-h4:mb-3 prose-h4:font-semibold prose-h4:text-slate-800 dark:prose-h4:text-slate-200
+          prose-p:text-slate-700 dark:prose-p:text-slate-300 prose-p:leading-relaxed prose-p:mb-6
+          prose-ul:my-6 prose-ul:space-y-3
+          prose-li:text-slate-700 dark:prose-li:text-slate-300
+          prose-strong:text-slate-900 dark:prose-strong:text-slate-100 prose-strong:font-semibold
+          prose-a:text-blue-700 dark:prose-a:text-blue-400 prose-a:no-underline hover:prose-a:underline">
           {children}
         </div>
 
@@ -107,5 +117,53 @@ export function InternalLinkBox({
         </p>
       </Link>
     </Card>
+  )
+}
+
+export function HighlightBox({ 
+  children,
+  variant = 'info'
+}: {
+  children: ReactNode
+  variant?: 'info' | 'success' | 'warning'
+}) {
+  const variants = {
+    info: 'bg-blue-50 dark:bg-blue-950/30 border-blue-200 dark:border-blue-800',
+    success: 'bg-emerald-50 dark:bg-emerald-950/30 border-emerald-200 dark:border-emerald-800',
+    warning: 'bg-amber-50 dark:bg-amber-950/30 border-amber-200 dark:border-amber-800'
+  }
+
+  return (
+    <div className={`not-prose my-8 p-6 rounded-lg border-l-4 ${variants[variant]}`}>
+      <div className="prose prose-slate dark:prose-invert max-w-none prose-p:mb-3 prose-p:last:mb-0 prose-ul:my-3 prose-li:my-1">
+        {children}
+      </div>
+    </div>
+  )
+}
+
+export function QuickTip({ 
+  title,
+  children
+}: {
+  title: string
+  children: ReactNode
+}) {
+  return (
+    <div className="not-prose my-8 p-6 rounded-lg bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-800 dark:to-slate-900 border border-slate-200 dark:border-slate-700">
+      <div className="flex gap-4">
+        <div className="flex-shrink-0 mt-1">
+          <svg className="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <div className="flex-1">
+          <h4 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-2">{title}</h4>
+          <div className="prose prose-slate dark:prose-invert max-w-none prose-p:text-sm prose-p:mb-2 prose-p:last:mb-0">
+            {children}
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
