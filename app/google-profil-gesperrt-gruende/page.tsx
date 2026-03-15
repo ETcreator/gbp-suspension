@@ -116,13 +116,16 @@ export default function GoogleProfilGesperrtGruendePage() {
       </HighlightBox>
 
       <h3>So korrigieren Sie das Problem:</h3>
-      <CheckList variant="arrow" items={[
-        'Reduzieren Sie den Firmennamen auf die offizielle Bezeichnung',
-        'Entfernen Sie alle Keywords, Städtenamen, Service-Beschreibungen',
-        'Nutzen Sie das Feld "Geschäftsbeschreibung" für Details zu Ihren Leistungen',
-        'Verwenden Sie passende Kategorien statt Keyword-Anhäufung im Namen',
-        'Dokumentieren Sie die Korrektur mit Screenshot für den Einspruch'
-      ]} />
+      <p>
+        Bei Keyword-Verstößen im Firmennamen reicht es häufig nicht aus, nur den sichtbaren Namen zu ändern. Google prüft die Konsistenz zwischen dem Profil-Namen, der offiziellen Gewerbeanmeldung, Website-Angaben und der bisherigen Profil-Historie. Eine einfache Umbenennung ohne Berücksichtigung dieser Faktoren kann die Sperrung sogar verschlimmern.
+      </p>
+      <p>
+        Entscheidend ist auch der Zeitpunkt: Wurde der Name bereits vor der Sperrung korrigiert, oder erst danach? Gibt es eine plausible Begründung für den ursprünglichen Namen? Wie lange bestand der Verstoß bereits? Diese Kontextfaktoren bestimmen, welche Nachweise Google im Einspruch erwartet und wie die Erfolgsaussichten einzuschätzen sind.
+      </p>
+      <CTASection 
+        text="Keyword-Verstoß analysieren"
+        subtitle="Ermitteln Sie in wenigen Minuten, ob dieser Sperrungsgrund auf Ihr Profil zutrifft und welche Schritte in Ihrem konkreten Fall sinnvoll sind"
+      />
 
       <h2>Grund 3: Mehrere Profile für denselben Standort</h2>
 
@@ -157,17 +160,15 @@ export default function GoogleProfilGesperrtGruendePage() {
       </ImportantNote>
 
       <h3>So bereinigen Sie die Situation:</h3>
-      <CheckList variant="check" items={[
-        'Identifizieren Sie alle Profile: Suchen Sie auf Google Maps nach Ihrer Adresse und Ihrem Firmennamen in allen Varianten',
-        'Bestimmen Sie das Hauptprofil: Wählen Sie das älteste, am besten gepflegte Profil mit den meisten Bewertungen',
-        'Löschen Sie Duplikate: Markieren Sie doppelte Profile zur Löschung oder beantragen Sie deren Entfernung',
-        'Konsolidieren Sie Informationen: Übertragen Sie wichtige Daten vom zu löschenden Profil auf das Hauptprofil',
-        'Dokumentieren Sie die Bereinigung: Screenshots vor und nach der Bereinigung für den Einspruch'
-      ]} />
-
+      <p>
+        Die Bereinigung doppelter Profile ist komplexer als es zunächst scheint. Nicht immer ist das älteste Profil das richtige – entscheidend ist, welches Profil die Bewertungshistorie, die Verifizierung und die meiste Nutzerinteraktion hat. Eine falsche Entscheidung kann zum Verlust wertvoller Bewertungen führen oder die Sperrung verschlimmern.
+      </p>
+      <p>
+        Zudem stellt sich die Frage: Sollen Profile sofort gelöscht werden, oder erst nach erfolgreicher Reaktivierung des Hauptprofils? Wie erklärt man Google glaubhaft, dass es sich um versehentliche Duplikate handelte und nicht um bewusste Manipulation? Die Antworten hängen stark davon ab, wann die Duplikate entstanden, wer sie erstellt hat und ob bereits Sperrungen ausgesprochen wurden.
+      </p>
       <CTASection 
-        text="Profil-Situation analysieren"
-        subtitle="Ermitteln Sie die spezifischen Probleme Ihres Profils"
+        text="Duplikat-Situation analysieren"
+        subtitle="Ermitteln Sie in wenigen Minuten, welche Strategie zur Profil-Bereinigung in Ihrem Fall am sinnvollsten ist"
       />
 
       <h2>Grund 4: Unklare oder falsche Geschäftsart</h2>
@@ -195,13 +196,16 @@ export default function GoogleProfilGesperrtGruendePage() {
       </ContentCard>
 
       <h3>So stellen Sie Klarheit her:</h3>
-      <CheckList variant="arrow" items={[
-        'Wählen Sie die präziseste Hauptkategorie, die Ihr Kerngeschäft beschreibt',
-        'Fügen Sie nur Zusatzkategorien hinzu, die Sie tatsächlich anbieten',
-        'Konfigurieren Sie korrekt als Standort-Geschäft oder Service Area Business',
-        'Stellen Sie sicher, dass Beschreibung, Kategorien und Fotos ein konsistentes Bild ergeben',
-        'Bei Spezialgeschäften: Fügen Sie detaillierte Beschreibungen hinzu, die Ihre Legitimität belegen'
-      ]} />
+      <p>
+        Die Kategorie-Wahl ist weitaus komplexer als eine einfache Auswahl aus einem Dropdown-Menü. Sie muss zur tatsächlichen Geschäftstätigkeit passen, mit den Fotos und der Beschreibung übereinstimmen und sich mit der gewählten Standort-Konfiguration (physisches Geschäft vs. Service Area) vertragen. Ein Handwerksbetrieb, der Kunden besucht, braucht eine andere Konfiguration als ein Ladengeschäft mit Öffnungszeiten.
+      </p>
+      <p>
+        Hinzu kommt: Auch die Anzahl der Kategorien sendet Signale. Zu viele wirken unglaubwürdig, zu wenige schränken unnötig ein. Die optimale Balance hängt von der Branche, dem Geschäftsmodell und der bisherigen Profil-Historie ab. Eine falsche Neu-Konfiguration während einer aktiven Sperrung kann die Situation verschlechtern.
+      </p>
+      <CTASection 
+        text="Kategorie-Konfiguration prüfen"
+        subtitle="Ermitteln Sie in wenigen Minuten, ob Ihre Kategorien und Standort-Einstellungen korrekt konfiguriert sind"
+      />
 
       <h2>Grund 5: Virtuelle Büros und Coworking ohne klare Berechtigung</h2>
 
@@ -229,13 +233,16 @@ export default function GoogleProfilGesperrtGruendePage() {
       </HighlightBox>
 
       <h3>So nutzen Sie Coworking richtlinienkonform:</h3>
-      <CheckList variant="check" items={[
-        'Fester Arbeitsplatz: Buchen Sie einen dedizierten Platz, nicht nur Flex Desk',
-        'Regelmäßige Präsenz: Seien Sie nachweisbar regelmäßig vor Ort (Zugangsprotokolle, Bestätigung des Betreibers)',
-        'Kundenempfang möglich: Stellen Sie sicher, dass Sie Kunden dort empfangen können (Meetingräume buchbar)',
-        'Dokumentation: Mietvertrag für festen Platz, Fotos Ihres beschrifteten Arbeitsplatzes, Bestätigung des Coworking-Betreibers',
-        'Alternative: Wenn diese Anforderungen nicht erfüllbar sind, konfigurieren Sie Ihr Profil als Service Area Business ohne sichtbare Adresse'
-      ]} />
+      <p>
+        Die Legitimation eines Coworking-Standorts für ein Google Business Profile ist eine Grauzone, die sehr individuell bewertet wird. Nicht jeder feste Arbeitsplatz reicht aus – Google prüft auch, ob Sie Kunden dort tatsächlich empfangen, ob Ihre Anwesenheit nachweisbar ist und ob die Geschäftsadresse mit Ihrem Geschäftsmodell zusammenpasst. Ein Berater, der nur gelegentlich Kunden im Coworking trifft, hat andere Anforderungen als ein Designer, der dort dauerhaft arbeitet.
+      </p>
+      <p>
+        Die erforderliche Dokumentation variiert stark: Manchmal akzeptiert Google einen einfachen Mietvertrag, manchmal werden Zugangsprotokolle, Bestätigungen des Betreibers und Fotos des beschrifteten Arbeitsplatzes verlangt. Bei bereits gesperrten Profilen sind die Anforderungen typischerweise strenger als bei Neuanmeldungen.
+      </p>
+      <CTASection 
+        text="Coworking-Legitimation prüfen"
+        subtitle="Ermitteln Sie in wenigen Minuten, ob Ihre Coworking-Situation den Google-Anforderungen entspricht und welche Nachweise erforderlich sind"
+      />
 
       <div className="not-prose my-8 grid gap-4 md:grid-cols-2">
         <InternalLinkBox 
@@ -288,13 +295,16 @@ export default function GoogleProfilGesperrtGruendePage() {
       </ContentCard>
 
       <h3>So stellen Sie Konsistenz her:</h3>
-      <CheckList variant="check" items={[
-        'Definieren Sie eine Mastervariante: Wählen Sie die exakte Schreibweise aus der Gewerbeanmeldung',
-        'Aktualisieren Sie systematisch: Ändern Sie ALLE Online-Präsenzen auf diese exakte Schreibweise',
-        'Zu prüfende Orte: Google-Profil, Website (Impressum, Kontaktseite, Footer), Social Media, Branchenverzeichnisse',
-        'Dokumentieren Sie: Erstellen Sie Screenshots der Änderungen für den Einspruch',
-        'Warten Sie 48h: Geben Sie Google Zeit, die Änderungen zu erkennen, bevor Sie Einspruch einlegen'
-      ]} />
+      <p>
+        Die Herstellung von NAP-Konsistenz ist nicht nur eine Frage der bloßen Angleichung aller Angaben. Entscheidend ist auch die Reihenfolge: Welche Plattformen sollten zuerst aktualisiert werden? Reicht es, nur die offensichtlichen Stellen zu korrigieren, oder müssen auch alte Brancheneinträge bereinigt werden, die seit Jahren nicht mehr gepflegt wurden?
+      </p>
+      <p>
+        Hinzu kommt der Faktor Zeit: Wie lange brauchen Google und andere Suchmaschinen, um die Änderungen zu erkennen? Sollte der Einspruch sofort nach den Änderungen eingereicht werden, oder besser nach einer Wartezeit? Bei aktiven Sperrungen ist das Timing kritisch – zu frühe Einsprüche können scheitern, weil Google die Korrekturen noch nicht erkannt hat.
+      </p>
+      <CTASection 
+        text="NAP-Konsistenz überprüfen"
+        subtitle="Ermitteln Sie in wenigen Minuten, welche NAP-Daten inkonsistent sind und in welcher Reihenfolge Sie diese korrigieren sollten"
+      />
 
       <h2>Grund 7: Auffällige Änderungen oder verdächtige Signale</h2>
 
